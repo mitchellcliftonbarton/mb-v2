@@ -1,0 +1,74 @@
+// margins
+
+@mixin margin-position ($margin, $position) {
+  margin: $margin;
+  position: $position;
+}
+
+// transitions 
+
+@mixin cubic ($time) {
+  transition: all $time cubic-bezier(.43, .29, .22, .96);
+  -webkit-transition: all $time cubic-bezier(.43, .29, .22, .96);
+  -moz-transition: all $time cubic-bezier(.43, .29, .22, .96);
+}
+
+@mixin transition ($time) {
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  transition: all $time;
+}
+
+//font weights
+
+@mixin default-type {
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+//rotate
+
+@mixin rotate ($degrees) {
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees); /* IE 9 */
+  -webkit-transform: rotate($degrees); /* Chrome, Safari, Opera */
+  transform: rotate($degrees);
+}
+
+// lines animation
+
+@mixin line {
+  height: 4px;
+  opacity: 0;
+  position: relative;
+  top: -10px;
+  margin: 0 auto;
+}
+
+//arrows
+
+@mixin arrows {
+  color: #c8c8c8;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  position: relative;
+  font-weight: lighter;
+  opacity: 0;
+  top: -20px;
+  z-index: -10;
+  @include xs {
+    top: 21px;
+  }
+}
+
+@mixin md {
+  @media (max-width:$screen-md-max) { @content; }
+}
+
+@mixin sm {
+  @media (max-width:$screen-sm-max) { @content; }
+}
+
+@mixin xs {
+  @media (max-width: 480px) { @content; }
+}
