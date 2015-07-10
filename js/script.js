@@ -1,6 +1,60 @@
+function linkzFadeOut () {
+  setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 30px)'); }, 50);
+  setTimeout(function() {$('#linkz-1').css('top', '-10px'); }, 150);
+  setTimeout(function() {$('#linkz-2').css('top', '-10px'); }, 250);
+  setTimeout(function() {$('#linkz-3').css('top', '-10px'); }, 350);
+  setTimeout(function() {$('#linkz-4').css('top', '-10px'); }, 450);
+  setTimeout(function() {$('#linkz-5').css('top', '-10px'); }, 550);
+
+
+  setTimeout(function() {$('.selected-works-title').css('opacity', '0'); }, 70);
+  setTimeout(function() {$('#linkz-1').css('opacity', '0'); }, 170);
+  setTimeout(function() {$('#linkz-2').css('opacity', '0'); }, 270);
+  setTimeout(function() {$('#linkz-3').css('opacity', '0'); }, 370);
+  setTimeout(function() {$('#linkz-4').css('opacity', '0'); }, 470);
+  setTimeout(function() {$('#linkz-5').css('opacity', '0'); }, 570);
+
+  setTimeout(function() {$('.selected-works-title').css('visibility', 'hidden'); }, 70);
+  setTimeout(function() {$('#linkz-1').css('visibility', 'hidden'); }, 170);
+  setTimeout(function() {$('#linkz-2').css('visibility', 'hidden'); }, 270);
+  setTimeout(function() {$('#linkz-3').css('visibility', 'hidden'); }, 370);
+  setTimeout(function() {$('#linkz-4').css('visibility', 'hidden'); }, 470);
+  setTimeout(function() {$('#linkz-5').css('visibility', 'hidden'); }, 570);
+  
+}
+
+function linkzFadeIn () {
+  setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 20px)'); }, 50);
+  setTimeout(function() {$('#linkz-1').css('top', '0px'); }, 150);
+  setTimeout(function() {$('#linkz-2').css('top', '0px'); }, 250);
+  setTimeout(function() {$('#linkz-3').css('top', '0px'); }, 350);
+  setTimeout(function() {$('#linkz-4').css('top', '0px'); }, 450);
+  setTimeout(function() {$('#linkz-5').css('top', '0px'); }, 550);
+
+
+  setTimeout(function() {$('.selected-works-title').css('opacity', '1'); }, 70);
+  setTimeout(function() {$('#linkz-1').css('opacity', '1'); }, 170);
+  setTimeout(function() {$('#linkz-2').css('opacity', '1'); }, 270);
+  setTimeout(function() {$('#linkz-3').css('opacity', '1'); }, 370);
+  setTimeout(function() {$('#linkz-4').css('opacity', '1'); }, 470);
+  setTimeout(function() {$('#linkz-5').css('opacity', '1'); }, 570);
+
+  setTimeout(function() {$('.selected-works-title').css('visibility', 'visible'); }, 70);
+  setTimeout(function() {$('#linkz-1').css('visibility', 'visible'); }, 170);
+  setTimeout(function() {$('#linkz-2').css('visibility', 'visible'); }, 270);
+  setTimeout(function() {$('#linkz-3').css('visibility', 'visible'); }, 370);
+  setTimeout(function() {$('#linkz-4').css('visibility', 'visible'); }, 470);
+  setTimeout(function() {$('#linkz-5').css('visibility', 'visible'); }, 570);
+  
+}
+
 $(window).load(function () {
   if ($(window).width() > 480) {
-      $('.loading').css('opacity', '0');   
+      $('.loading').css('opacity', '0'); 
+      $('.mitchell').css('opacity', '1');
+      $('.mitchellbarton').css('top', 'calc(50% - 5px');
+      $('.menu-div').css({'opacity':'1', 'top':"calc(50% - 20px"});
+      setTimeout(function() {linkzFadeIn();}, 500);  
   }
   
 });
@@ -16,69 +70,7 @@ $(document).ready(function() {
           event.preventDefault();
         }
       });
-
-      function linkzFadeOut () {
-        setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 30px)'); }, 50);
-        setTimeout(function() {$('#linkz-1').css('top', '-10px'); }, 150);
-        setTimeout(function() {$('#linkz-2').css('top', '-10px'); }, 250);
-        setTimeout(function() {$('#linkz-3').css('top', '-10px'); }, 350);
-        setTimeout(function() {$('#linkz-4').css('top', '-10px'); }, 450);
-        setTimeout(function() {$('#linkz-5').css('top', '-10px'); }, 550);
-
-
-        setTimeout(function() {$('.selected-works-title').css('opacity', '0'); }, 70);
-        setTimeout(function() {$('#linkz-1').css('opacity', '0'); }, 170);
-        setTimeout(function() {$('#linkz-2').css('opacity', '0'); }, 270);
-        setTimeout(function() {$('#linkz-3').css('opacity', '0'); }, 370);
-        setTimeout(function() {$('#linkz-4').css('opacity', '0'); }, 470);
-        setTimeout(function() {$('#linkz-5').css('opacity', '0'); }, 570);
-
-        setTimeout(function() {$('.selected-works-title').css('visibility', 'hidden'); }, 70);
-        setTimeout(function() {$('#linkz-1').css('visibility', 'hidden'); }, 170);
-        setTimeout(function() {$('#linkz-2').css('visibility', 'hidden'); }, 270);
-        setTimeout(function() {$('#linkz-3').css('visibility', 'hidden'); }, 370);
-        setTimeout(function() {$('#linkz-4').css('visibility', 'hidden'); }, 470);
-        setTimeout(function() {$('#linkz-5').css('visibility', 'hidden'); }, 570);
-        
-      }
-
-      function linkzFadeIn () {
-        setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 20px)'); }, 50);
-        setTimeout(function() {$('#linkz-1').css('top', '0px'); }, 150);
-        setTimeout(function() {$('#linkz-2').css('top', '0px'); }, 250);
-        setTimeout(function() {$('#linkz-3').css('top', '0px'); }, 350);
-        setTimeout(function() {$('#linkz-4').css('top', '0px'); }, 450);
-        setTimeout(function() {$('#linkz-5').css('top', '0px'); }, 550);
-
-
-        setTimeout(function() {$('.selected-works-title').css('opacity', '1'); }, 70);
-        setTimeout(function() {$('#linkz-1').css('opacity', '1'); }, 170);
-        setTimeout(function() {$('#linkz-2').css('opacity', '1'); }, 270);
-        setTimeout(function() {$('#linkz-3').css('opacity', '1'); }, 370);
-        setTimeout(function() {$('#linkz-4').css('opacity', '1'); }, 470);
-        setTimeout(function() {$('#linkz-5').css('opacity', '1'); }, 570);
-
-        setTimeout(function() {$('.selected-works-title').css('visibility', 'visible'); }, 70);
-        setTimeout(function() {$('#linkz-1').css('visibility', 'visible'); }, 170);
-        setTimeout(function() {$('#linkz-2').css('visibility', 'visible'); }, 270);
-        setTimeout(function() {$('#linkz-3').css('visibility', 'visible'); }, 370);
-        setTimeout(function() {$('#linkz-4').css('visibility', 'visible'); }, 470);
-        setTimeout(function() {$('#linkz-5').css('visibility', 'visible'); }, 570);
-        
-      }
-
-
-        // animation after load
-
-        if ($(window).width() > 480) {
-          $('.mitchell').css('opacity', '1');
-          $('.mitchellbarton').css('top', 'calc(50% - 5px');
-          $('.menu-div').css({'opacity':'1', 'top':"calc(50% - 20px"});
-          setTimeout(function() {linkzFadeIn();}, 300);    
-        }
-        
-
-
+      
       $('.mainlink').click(function() {
         linkzFadeOut(); 
       });

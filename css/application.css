@@ -491,6 +491,7 @@ body {
             margin: 0 auto;
             display: none;
             padding-bottom: 10px;
+            max-width: 600px;
             -webkit-transition: all 0.5s;
             -moz-transition: all 0.5s;
             transition: all 0.5s; }
@@ -514,7 +515,8 @@ body {
             width: 60%;
             margin: 0 auto;
             letter-spacing: 1.3px;
-            padding-bottom: 50px; }
+            padding-bottom: 50px;
+            max-width: 600px; }
             @media (max-width: 480px) {
               body .container .middle .art .images-div .piecetitle {
                 width: 87%; } }
@@ -533,42 +535,50 @@ body {
               position: relative;
               top: 85px; } }
           body .container .middle .art .series .floral-title {
-            width: 45%; }
+            width: 45%;
+            max-width: 600px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .floral-title {
                 width: 87%; } }
           body .container .middle .art .series .floral-images {
-            width: 45%; }
+            width: 45%;
+            max-width: 600px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .floral-images {
                 width: 87%; } }
           body .container .middle .art .series .cycle-title {
-            width: 50%; }
+            width: 50%;
+            max-width: 600px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle-title {
                 width: 87%; } }
           body .container .middle .art .series .cycle1 {
-            width: 50%; }
+            width: 50%;
+            max-width: 600px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle1 {
                 width: 87%; } }
           body .container .middle .art .series .cycle-title2 {
-            width: 70%; }
+            width: 70%;
+            max-width: 700px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle-title2 {
                 width: 87%; } }
           body .container .middle .art .series .cycle2 {
-            width: 70%; }
+            width: 70%;
+            max-width: 700px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle2 {
                 width: 87%; } }
           body .container .middle .art .series .cycle-title3 {
-            width: 40%; }
+            width: 40%;
+            max-width: 400px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle-title3 {
                 width: 87%; } }
           body .container .middle .art .series .cycle3 {
-            width: 40%; }
+            width: 40%;
+            max-width: 400px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .cycle3 {
                 width: 87%; } }

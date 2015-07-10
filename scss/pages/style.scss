@@ -499,6 +499,7 @@ body{
             margin: 0 auto;
             display: none;
             padding-bottom: 10px;
+            max-width: 600px;
             @include transition (.5s);
             @include xs {
               width: 87%;
@@ -525,6 +526,7 @@ body{
             margin: 0 auto;
             letter-spacing: 1.3px;
             padding-bottom: 50px;
+            max-width: 600px;
             @include xs {
               width: 87%;
             }
@@ -549,6 +551,7 @@ body{
 
           .floral-title{
             width: 45%;
+            max-width: 600px;
             @include xs {
               width: 87%;
             }
@@ -556,6 +559,7 @@ body{
 
           .floral-images{
             width: 45%;
+            max-width: 600px;
             @include xs {
               width: 87%;
             }
@@ -563,6 +567,7 @@ body{
           
           .cycle-title{
             width: 50%;
+            max-width: 600px;
             @include xs {
               width: 87%;
             }
@@ -570,6 +575,7 @@ body{
 
           .cycle1{
             width: 50%;
+            max-width: 600px;
             @include xs {
               width: 87%;
             }
@@ -577,6 +583,7 @@ body{
 
           .cycle-title2{
             width: 70%;
+            max-width: 700px;
             @include xs {
               width: 87%;
             }
@@ -584,6 +591,7 @@ body{
 
           .cycle2{
             width: 70%;
+            max-width: 700px;
             @include xs {
               width: 87%;
             }
@@ -591,6 +599,7 @@ body{
 
           .cycle-title3{
             width: 40%;
+            max-width: 400px;
             @include xs {
               width: 87%;
             }
@@ -598,6 +607,7 @@ body{
 
           .cycle3{
             width: 40%;
+            max-width: 400px;
             @include xs {
               width: 87%;
             }
