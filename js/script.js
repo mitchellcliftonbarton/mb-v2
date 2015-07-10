@@ -6,7 +6,6 @@ function linkzFadeOut () {
   setTimeout(function() {$('#linkz-4').css('top', '-10px'); }, 450);
   setTimeout(function() {$('#linkz-5').css('top', '-10px'); }, 550);
 
-
   setTimeout(function() {$('.selected-works-title').css('opacity', '0'); }, 70);
   setTimeout(function() {$('#linkz-1').css('opacity', '0'); }, 170);
   setTimeout(function() {$('#linkz-2').css('opacity', '0'); }, 270);
@@ -20,7 +19,6 @@ function linkzFadeOut () {
   setTimeout(function() {$('#linkz-3').css('visibility', 'hidden'); }, 370);
   setTimeout(function() {$('#linkz-4').css('visibility', 'hidden'); }, 470);
   setTimeout(function() {$('#linkz-5').css('visibility', 'hidden'); }, 570);
-  
 }
 
 function linkzFadeIn () {

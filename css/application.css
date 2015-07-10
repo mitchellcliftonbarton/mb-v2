@@ -536,13 +536,13 @@ body {
               top: 85px; } }
           body .container .middle .art .series .floral-title {
             width: 45%;
-            max-width: 600px; }
+            max-width: 500px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .floral-title {
                 width: 87%; } }
           body .container .middle .art .series .floral-images {
             width: 45%;
-            max-width: 600px; }
+            max-width: 500px; }
             @media (max-width: 480px) {
               body .container .middle .art .series .floral-images {
                 width: 87%; } }
