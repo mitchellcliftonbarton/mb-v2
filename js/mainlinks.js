@@ -42,15 +42,20 @@ $(document).ready(function() {
 
   // back to top 
 
-  $(window).scroll(function() {
-    if ($(window).scrollTop() > 318) {
-      $('.backtotop').css('opacity', '1');
-      $('.backtotop').css('visibility', 'visible');
-    } else {
-      $('.backtotop').css('opacity', '0');
-      $('.backtotop').css('visibility', 'hidden');
-    }
-  });
+  if ($(window).width() > 480) {
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > 318) {
+        $('.backtotop').css('opacity', '1');
+        $('.backtotop').css('visibility', 'visible');
+      } else {
+        $('.backtotop').css('opacity', '0');
+        $('.backtotop').css('visibility', 'hidden');
+      }
+    });
+  } else {
+    
+  }
+  
       
 
   $('.backtotop').click(function() {

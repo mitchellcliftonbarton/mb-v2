@@ -374,6 +374,11 @@ body{
             text-align: center;
           }
 
+          &:hover {
+            top: calc(50% - 70px);
+            @include transition (.3s);
+          }
+
           a {
             color: #c8c8c8;
             font-size: 13px;

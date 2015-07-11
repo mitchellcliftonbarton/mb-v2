@@ -369,6 +369,11 @@ body {
               visibility: visible;
               width: 100%;
               text-align: center; } }
+          body .container .middle .art .backtotop:hover {
+            top: calc(50% - 70px);
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s; }
           body .container .middle .art .backtotop a {
             color: #c8c8c8;
             font-size: 13px;
