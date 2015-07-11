@@ -354,6 +354,51 @@ body{
         z-index: -10;
         opacity: 0;
         @include cubic (.6s);
+
+        .backtotop {
+          right: 138px;
+          top: calc(50% - 55px);
+          position: fixed;
+          height: 110px;
+          width: 50px;
+          opacity: 0;
+          visibility: hidden;
+          @include transition (.3s);
+          @include xs {
+            position: relative;
+            opacity: 1;
+            right: 0px;
+            top: 0px;
+            visibility: visible;
+            width: 100%;
+            text-align: center;
+          }
+
+          a {
+            color: #c8c8c8;
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            height: 100%;
+            width: 100%;
+            display: block;
+            line-height: 37px;
+          }
+
+          .break {
+            @include xs {
+              display: none;
+            }
+          }
+
+          .vertical {
+            height: 53px;
+            width: 1px;
+            background: #f2f2f2;
+            margin-bottom: 14px;
+            margin-left: 18px;
+          }
+        }
         
         .titles{
           position: relative;

@@ -40,7 +40,22 @@ $(document).ready(function() {
     $(this).css('opacity', '1');
   });
 
-  
+  // back to top 
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 318) {
+      $('.backtotop').css('opacity', '1');
+      $('.backtotop').css('visibility', 'visible');
+    } else {
+      $('.backtotop').css('opacity', '0');
+      $('.backtotop').css('visibility', 'hidden');
+    }
+  });
+      
+
+  $('.backtotop').click(function() {
+    $('html, body').animate({scrollTop: 0}, "slow");
+  });
   
 
 });
