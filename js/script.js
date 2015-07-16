@@ -59,10 +59,8 @@ $(window).load(function () {
 
 $(document).ready(function() {
 
-  setTimeout(function() {
-    //linkz click
       $('a').click(function(event) {
-        if ($(this).hasClass('tumblr-link')) {
+        if ($(this).hasClass('real-link')) {
 
         } else {
           event.preventDefault();
@@ -72,7 +70,16 @@ $(document).ready(function() {
       $('.mainlink').click(function() {
         linkzFadeOut(); 
       });
-      
+
+      // image loading
+
+      $('#mainlink-ul').one('mouseenter', function() {
+        $('.gallery-1').load("pages/stlucia.html");
+        $('.gallery-2').load("pages/flowers.html");
+        $('.gallery-3').load("pages/cycle.html");
+        $('.gallery-4').load("pages/winterprep.html");
+        $('.gallery-5').load("pages/rising-falling.html");
+      });
 
       // art fade in
 
@@ -418,7 +425,4 @@ $(document).ready(function() {
           setTimeout(function() {$('#about-section3').css('top', '0px'); }, 2300);
           setTimeout(function() {$('#about-section4').css('top', '0px'); }, 2350);
         });
-
-
-      }, 1000);
 });

@@ -34,6 +34,11 @@ body{
   font-family: Roboto, sans-serif;
   text-decoration: none;
 
+  #yep {
+    height: 300px;
+    width: 350px;
+  }
+
 
   .loading {
     background: $dodger;
@@ -388,6 +393,10 @@ body{
             width: 100%;
             display: block;
             line-height: 37px;
+            @include xs {
+              color: gray;
+              font-size: 16px;
+            }
           }
 
           .break {
