@@ -46,9 +46,6 @@ body {
   height: 100%;
   font-family: Roboto, sans-serif;
   text-decoration: none; }
-  body #yep {
-    height: 300px;
-    width: 350px; }
   body .loading {
     background: dodgerblue;
     width: 100%;

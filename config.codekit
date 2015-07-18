@@ -1729,6 +1729,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/rising-falling-photo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30178,
+		"inputAbbreviatedPath": "\/images\/rising-falling-photo.jpg",
+		"outputAbbreviatedPath": "\/images\/rising-falling-photo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rising-falling-photo2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43131,
+		"inputAbbreviatedPath": "\/images\/rising-falling-photo2.jpg",
+		"outputAbbreviatedPath": "\/images\/rising-falling-photo2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/stlucia1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,

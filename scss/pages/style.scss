@@ -34,12 +34,6 @@ body{
   font-family: Roboto, sans-serif;
   text-decoration: none;
 
-  #yep {
-    height: 300px;
-    width: 350px;
-  }
-
-
   .loading {
     background: $dodger;
     width: 100%;
@@ -51,6 +45,7 @@ body{
     @include xs {
       display: none;
     }
+    
     h1 {
       text-align: center;
       position: relative;

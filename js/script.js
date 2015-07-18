@@ -48,12 +48,21 @@ function linkzFadeIn () {
 
 $(window).load(function () {
   if ($(window).width() > 480) {
+    setTimeout(function() {
       $('.loading').css('opacity', '0'); 
       $('.mitchell').css('opacity', '1');
       $('.mitchellbarton').css('top', 'calc(50% - 5px');
       $('.menu-div').css({'opacity':'1', 'top':"calc(50% - 20px"});
-      setTimeout(function() {linkzFadeIn();}, 500);  
+      setTimeout(function() {linkzFadeIn();}, 500); 
+    }, 500);
+       
   }
+
+  $('.gallery-1').load("pages/stlucia.html");
+  $('.gallery-2').load("pages/flowers.html");
+  $('.gallery-3').load("pages/cycle.html");
+  $('.gallery-4').load("pages/winterprep.html");
+  $('.gallery-5').load("pages/rising-falling.html");
   
 });
 
@@ -73,13 +82,13 @@ $(document).ready(function() {
 
       // image loading
 
-      $('#mainlink-ul').one('mouseenter', function() {
-        $('.gallery-1').load("pages/stlucia.html");
-        $('.gallery-2').load("pages/flowers.html");
-        $('.gallery-3').load("pages/cycle.html");
-        $('.gallery-4').load("pages/winterprep.html");
-        $('.gallery-5').load("pages/rising-falling.html");
-      });
+      // $('#mainlink-ul').one('mouseenter', function() {
+      //   $('.gallery-1').load("pages/stlucia.html");
+      //   $('.gallery-2').load("pages/flowers.html");
+      //   $('.gallery-3').load("pages/cycle.html");
+      //   $('.gallery-4').load("pages/winterprep.html");
+      //   $('.gallery-5').load("pages/rising-falling.html");
+      // });
 
       // art fade in
 
