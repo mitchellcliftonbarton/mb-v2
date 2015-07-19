@@ -69,6 +69,16 @@ body {
       font-weight: 200;
       opacity: .15;
       text-transform: uppercase; }
+    body .loading .progress {
+      position: absolute;
+      width: 0%;
+      height: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #51a9ff;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      transition: all 0.5s; }
   body a {
     text-decoration: none; }
   body li {

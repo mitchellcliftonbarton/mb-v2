@@ -48,6 +48,8 @@ function linkzFadeIn () {
 
 $(window).load(function () {
   if ($(window).width() > 480) {
+
+    $('.progress').css('width', '100%');
     setTimeout(function() {
       $('.loading').css('opacity', '0'); 
       $('.mitchell').css('opacity', '1');

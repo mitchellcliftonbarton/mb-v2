@@ -45,7 +45,7 @@ body{
     @include xs {
       display: none;
     }
-    
+
     h1 {
       text-align: center;
       position: relative;
@@ -56,6 +56,16 @@ body{
       font-weight: 200;
       opacity: .15;
       text-transform: uppercase;
+    }
+
+    .progress {
+      position: absolute;
+      width: 0%;
+      height: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: lighten(dodgerblue, 10%);
+      @include transition (.5s);
     }
   }
   
