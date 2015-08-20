@@ -49,7 +49,7 @@ function linkzFadeIn () {
 $(window).load(function () {
   if ($(window).width() > 480) {
 
-    setTimeout(function() {$('.bar').css('width', '90%');}, 200);
+    setTimeout(function() {$('.bar').css('width', '100%');}, 200);
     setTimeout(function() {
       $('.loading').css('opacity', '0'); 
       $('.mitchell').css('opacity', '1');
