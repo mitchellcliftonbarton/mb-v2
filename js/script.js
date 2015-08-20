@@ -49,14 +49,14 @@ function linkzFadeIn () {
 $(window).load(function () {
   if ($(window).width() > 480) {
 
-    $('.progress').css('width', '100%');
+    setTimeout(function() {$('.bar').css('width', '90%');}, 200);
     setTimeout(function() {
       $('.loading').css('opacity', '0'); 
       $('.mitchell').css('opacity', '1');
       $('.mitchellbarton').css('top', 'calc(50% - 5px');
       $('.menu-div').css({'opacity':'1', 'top':"calc(50% - 20px"});
       setTimeout(function() {linkzFadeIn();}, 500); 
-    }, 500);
+    }, 700);
        
   }
 
@@ -82,17 +82,7 @@ $(document).ready(function() {
         linkzFadeOut(); 
       });
 
-      // image loading
-
-      // $('#mainlink-ul').one('mouseenter', function() {
-      //   $('.gallery-1').load("pages/stlucia.html");
-      //   $('.gallery-2').load("pages/flowers.html");
-      //   $('.gallery-3').load("pages/cycle.html");
-      //   $('.gallery-4').load("pages/winterprep.html");
-      //   $('.gallery-5').load("pages/rising-falling.html");
-      // });
-
-      // art fade in
+      //art fade in
 
       var delay1 = 1000;
       var delay2 = 1050;
@@ -275,6 +265,7 @@ $(document).ready(function() {
               $('.middle').css('right', clickedright);
               $('.about').css('right', clickedright);
               $('.main-menu').css('right', originalright);
+              $('.up').css('right', '138px');
 
               $('.menu').removeClass('clicked');
 
@@ -285,6 +276,7 @@ $(document).ready(function() {
               $('.middle').css('right', otherright);
               $('.about').css('right', otherright);
               $('.main-menu').css('right', clickedright);
+              $('.up').css('right', '358px');
 
               $('.menu').addClass('clicked');
             
@@ -436,4 +428,9 @@ $(document).ready(function() {
           setTimeout(function() {$('#about-section3').css('top', '0px'); }, 2300);
           setTimeout(function() {$('#about-section4').css('top', '0px'); }, 2350);
         });
+
+
+      // history changes
+
+      
 });
