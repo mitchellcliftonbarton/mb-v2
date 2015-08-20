@@ -14,11 +14,11 @@ $(document).ready(function() {
     });
   }
 
-  lineWidth("#mainlink1", "#line-1", "120px", "10px");
-  lineWidth("#mainlink2", "#line-2", "108px", "10px");
+  lineWidth("#mainlink1", "#line-1", "176px", "30px");
+  lineWidth("#mainlink2", "#line-2", "320px", "60px");
   lineWidth("#mainlink3", "#line-3", "106px", "10px");
-  lineWidth("#mainlink4", "#line-4", "320px", "60px");
-  lineWidth("#mainlink5", "#line-5", "176px", "30px");
+  lineWidth("#mainlink4", "#line-4", "108px", "10px");
+  lineWidth("#mainlink5", "#line-5", "120px", "10px");
 
   //menu home hover
 

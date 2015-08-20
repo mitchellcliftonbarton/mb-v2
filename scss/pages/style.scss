@@ -336,12 +336,12 @@ body{
             @include transition (.3s);
           }
 
-          #line-1{
+          #line-5{
             width: 10px;
             background: #ff3333;
           }
 
-          #line-2{
+          #line-4{
             width: 20px;
             background: $dodger;
           }
@@ -351,12 +351,12 @@ body{
             background: yellow;
           }
 
-          #line-4{
+          #line-2{
             width: 60px;
             background: purple;
           }
 
-          #line-5{
+          #line-1{
             width: 30px;
             background: rgba(0, 211, 197, 1);
           }

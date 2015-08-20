@@ -338,19 +338,19 @@ body {
             -webkit-transition: all 0.3s;
             -moz-transition: all 0.3s;
             transition: all 0.3s; }
-          body .container .middle .selected-works ul #line-1 {
+          body .container .middle .selected-works ul #line-5 {
             width: 10px;
             background: #ff3333; }
-          body .container .middle .selected-works ul #line-2 {
+          body .container .middle .selected-works ul #line-4 {
             width: 20px;
             background: dodgerblue; }
           body .container .middle .selected-works ul #line-3 {
             width: 20px;
             background: yellow; }
-          body .container .middle .selected-works ul #line-4 {
+          body .container .middle .selected-works ul #line-2 {
             width: 60px;
             background: purple; }
-          body .container .middle .selected-works ul #line-5 {
+          body .container .middle .selected-works ul #line-1 {
             width: 30px;
             background: #00d3c5; }
       body .container .middle .art {

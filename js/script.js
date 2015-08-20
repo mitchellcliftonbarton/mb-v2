@@ -209,11 +209,11 @@ $(document).ready(function() {
 
       // art fadeins
 
-        $('#mainlink1').click(function() {
+        $('#mainlink5').click(function() {
           artFadeIn(".stlucia", ".stlucia-images", ".stlucia-title");
         });
 
-        $('#mainlink2').click(function() {
+        $('#mainlink4').click(function() {
           artFadeIn(".floral", ".floral-images", ".floral-title");
         });
 
@@ -221,11 +221,11 @@ $(document).ready(function() {
           artFadeIn(".cycle", ".cycle-images", ".cycle-title");
         });
 
-        $('#mainlink4').click(function() {
+        $('#mainlink2').click(function() {
           artFadeIn(".controlledwinterprep", ".control-images", ".control-title");
         });
 
-        $('#mainlink5').click(function() {
+        $('#mainlink1').click(function() {
           artFadeIn(".risingfalling", ".rising-images", ".rising-title");
         });
 
@@ -337,11 +337,11 @@ $(document).ready(function() {
           //
 
           // st lucia
-          $('#next5, #prev2').click(function() {
+          $('#next4, #prev1').click(function() {
               prevNextFade(".stlucia", ".stlucia-images", ".stlucia-title");
           });
 
-          $('.page-link1').click(function() {
+          $('.page-link5').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -351,11 +351,11 @@ $(document).ready(function() {
           });
 
           //floral
-          $('#prev3, #next1').click(function() {
+          $('#prev5, #next3').click(function() {
               prevNextFade(".floral", ".floral-images", ".floral-title");
           });
 
-          $('.page-link2').click(function() {
+          $('.page-link4').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -379,11 +379,11 @@ $(document).ready(function() {
           });
 
           //controlled winter prep
-          $('#prev5, #next3').click(function() {
+          $('#prev3, #next1').click(function() {
               prevNextFade(".controlledwinterprep", ".control-images", ".control-title");
           });
 
-          $('.page-link4').click(function() {
+          $('.page-link2').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -393,11 +393,11 @@ $(document).ready(function() {
           });
 
           // rising/falling
-          $('#prev1, #next4').click(function() {
+          $('#prev2, #next5').click(function() {
               prevNextFade(".risingfalling", ".rising-images", ".rising-title");
           });
 
-          $('.page-link5').click(function() {
+          $('.page-link1').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
