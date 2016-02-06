@@ -7,6 +7,7 @@
   <meta name="description" content="I am a 23 year old artist/designer/web developer from Provo, Utah. I am inspired by computers, the internet, short films, spirituality, repetition, nature, and routine.">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type='text/javascript' src='js/min/script-min.js'></script>
   <link rel="stylesheet" type="text/css" href="css/application.css">
   <script>
@@ -41,7 +42,7 @@
         <h1 class="linktitle">home</h1>
       </a>
       <ul class="main-home-links">
-        <li><a class="art-link" href="#">ART</a></li>
+        <li><a class="art-link" href="#">WORK</a></li>
         <li><a class="about-link" href="javascript:void(0)">ABOUT / CV</a></li>
         <li><a href="http://mitchellbarton.tumblr.com/" class="real-link">TUMBLR</a></li>
       </ul>
@@ -57,24 +58,46 @@
       <div class="selected-works">
         <h1 class="selected-works-title" id="flashing">SELECTED WORKS</h1>
         <ul id="mainlink-ul">
-          <li id="linkz-1"><a class="mainlink" id="mainlink1" href="#"><span>01 /</span> RISING/FALLING<div class="line" id="line-1"></div></a></li>
-          <li id="linkz-2"><a class="mainlink" id="mainlink2" href="#"><span>02 /</span> CONTROLLED WINTER PREPARATION<div class="line" id="line-2"></div></a></li>
-          <li id="linkz-3"><a class="mainlink" id="mainlink3" href="#"><span>03 /</span> CYCLE<div class="line" id="line-3"></div></a></li>
-          <li id="linkz-4"><a class="mainlink" id="mainlink4" href="#"><span>04 /</span> FLORAL<div class="line" id="line-4"></div></a></li>
-          <li id="linkz-5"><a class="mainlink" id="mainlink5" href="#"><span>05 /</span> ST. LUCIA<div class="line" id="line-5"></div></a></li>
+          <li id="linkz-1"><a class="mainlink" id="mainlink1" href="#"><span>01 /</span> PSEUDORANDOM LANDSCAPE<div class="line" id="line-1"></div></a></li>
+          <li id="linkz-2"><a class="mainlink" id="mainlink2" href="#"><span>02 /</span> RISING/FALLING<div class="line" id="line-2"></div></a></li>
+          <li id="linkz-3"><a class="mainlink" id="mainlink3" href="#"><span>03 /</span> CONTROLLED WINTER PREPARATION<div class="line" id="line-3"></div></a></li>
+          <li id="linkz-4"><a class="mainlink" id="mainlink4" href="#"><span>04 /</span> CYCLE<div class="line" id="line-4"></div></a></li>
+          <li id="linkz-5"><a class="mainlink" id="mainlink5" href="#"><span>05 /</span> FLORAL<div class="line" id="line-5"></div></a></li>
         </ul>
       </div>
       <div class="art">
-        <div class="risingfalling series">
+        <div class="pseudorandom series">
           <div class="titles">
-            <h1 class="rising-title art-title">RISING/FALLING</h1>
+            <h1 class="pseudorandom-title art-title">PSEUDORANDOM LANDSCAPE</h1>
             <p class="pagination">
               <a href="#" class="page-link1 highlighted">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5" href="#">05</a>
             </p>
             <div class="arrows">
-              <ul>
+              <ul class="arrows-ul">
                 <li id="left"><a class="backarrow" id="prev1" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
                 <li id="right"><a class="forwardarrow" id="next1" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="pseudorandom-images-div images-div image-width">
+            <div class="gallery-1">
+              
+            </div>
+            <div class="backtotop up"><a href="#">BACK <br class="break">TO <br class="break">TOP</a></div>
+          </div>
+          
+        </div>
+
+        <div class="risingfalling series">
+          <div class="titles">
+            <h1 class="rising-title art-title">RISING/FALLING</h1>
+            <p class="pagination">
+              <a href="#" class="page-link1">01</a> / <a class="page-link2 highlighted" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5" href="#">05</a>
+            </p>
+            <div class="arrows">
+              <ul>
+                <li id="left"><a class="backarrow" id="prev2" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
+                <li id="right"><a class="forwardarrow" id="next2" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
               </ul>
             </div>
           </div>
@@ -88,12 +111,12 @@
           <div class="titles">
             <h1 class="control-title art-title">CONTROLLED WINTER PREPARATION</h1>
             <p class="pagination">
-              <a href="#" class="page-link1">01</a> / <a class="page-link2 highlighted" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5" href="#">05</a>
+              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3 highlighted" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5" href="#">05</a>
             </p>
             <div class="arrows">
               <ul>
-                <li id="left"><a class="backarrow" id="prev2" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
-                <li id="right"><a class="forwardarrow" id="next2" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
+                <li id="left"><a class="backarrow" id="prev3" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
+                <li id="right"><a class="forwardarrow" id="next3" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
               </ul>
             </div>
           </div>
@@ -106,12 +129,12 @@
           <div class="titles">
             <h1 class="cycle-title art-title">CYCLE</h1>
             <p class="pagination">
-              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3 highlighted" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5" href="#">05</a>
+              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4 highlighted" href="#">04</a> / <a class="page-link5" href="#">05</a>
             </p>
             <div class="arrows">
               <ul>
-                <li id="left"><a class="backarrow" id="prev3" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
-                <li id="right"><a class="forwardarrow" id="next3" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
+                <li id="left"><a class="backarrow" id="prev4" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
+                <li id="right"><a class="forwardarrow" id="next4" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
               </ul>
             </div>
           </div>
@@ -127,12 +150,12 @@
           <div class="titles">
             <h1 class="floral-title art-title">FLORAL</h1>
             <p class="pagination">
-              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4 highlighted" href="#">04</a> / <a class="page-link5" href="#">05</a>
+              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5 highlighted" href="#">05</a>
             </p>
             <div class="arrows">
               <ul>
-                <li id="left"><a class="backarrow" id="prev4" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
-                <li id="right"><a class="forwardarrow" id="next4" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
+                <li id="left"><a class="backarrow" id="prev5" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
+                <li id="right"><a class="forwardarrow" id="next5" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
               </ul>
             </div>
           </div>
@@ -141,30 +164,6 @@
             <div class="backtotop up"><a href="#">BACK <br class="break">TO <br class="break">TOP</a></div>
           </div>
         </div>
-
-        <div class="stlucia series">
-          <div class="titles">
-            <h1 class="stlucia-title art-title">ST. LUCIA</h1>
-            <p class="pagination">
-              <a href="#" class="page-link1">01</a> / <a class="page-link2" href="#">02</a> / <a class="page-link3" href="#">03</a> / <a class="page-link4" href="#">04</a> / <a class="page-link5 highlighted" href="#">05</a>
-            </p>
-            <div class="arrows">
-              <ul class="arrows-ul">
-                <li id="left"><a class="backarrow" id="prev5" href="#"><span class="leftarrow">&larr;</span> <span class="gone">PREV</span></a></li>
-                <li id="right"><a class="forwardarrow" id="next5" href="#"><span class="gone">NEXT</span> <span class="rightarrow">&rarr;</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stlucia-images-div images-div image-width">
-            <div class="gallery-1">
-              
-            </div>
-            <div class="backtotop up"><a href="#">BACK <br class="break">TO <br class="break">TOP</a></div>
-          </div>
-          
-        </div>
-
-        
       </div>
     </div>
     <div class="about">
@@ -172,7 +171,7 @@
         <a class="about-backarrow" href="#"><span class="about-leftarrow">&larr;</span> <span class="gone">BACK</span></a>
         <h1>// <span id="who1">W</span><span id="who2">H</span><span id="who3">O</span> <span id="who4">I</span> <span id="who5">A</span><span id="who6">M</span></h1>
         <p class="whoiam1">I am a 23 year old artist/designer/web developer from Provo, Utah. I am inspired by computers, the internet, short films, spirituality, repetition, nature, and routine.</p>
-        <p>Contact me at mitchellcliftonbarton@gmail.com</p>
+        <p>mitchellcliftonbarton@gmail.com</p>
       </div>
       <div class="about-section" id="about-section2">
         <h1>// <span id="ex1">E</span><span id="ex2">D</span><span id="ex3">U</span><span id="ex4">C</span><span id="ex5">A</span><span id="ex6">T</span><span id="ex7">I</span><span id="ex8">O</span><span id="ex9">N</span></h1>
@@ -180,6 +179,7 @@
       </div>
       <div class="about-section" id="about-section3">
         <h1>// <span id="ex1">E</span><span id="ex2">X</span><span id="ex3">H</span><span id="ex4">I</span><span id="ex5">B</span><span id="ex6">I</span><span id="ex7">T</span><span id="ex8">I</span><span id="ex9">O</span><span id="ex10">N</span><span id="ex11">S</span></h1>
+        <p><span class="year">2015</span> Pseudorandom Landscape, B.F. Larsen Gallery, Provo, UT</p>
         <p><span class="year">2015</span> Rising/Falling, Gallery 303, Provo, UT</p>
         <p><span class="year">2015</span> Annual Student Show, Harris Fine Arts Center, Provo, UT</p>
         <p><span class="year">2015</span> Utah Ties, CUAC, Salt Lake City, UT - Curated by Mara McCarthy</p>

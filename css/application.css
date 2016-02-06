@@ -340,19 +340,19 @@ body {
             transition: all 0.3s; }
           body .container .middle .selected-works ul #line-5 {
             width: 10px;
-            background: #ff3333; }
+            background: dodgerblue; }
           body .container .middle .selected-works ul #line-4 {
             width: 20px;
-            background: dodgerblue; }
+            background: yellow; }
           body .container .middle .selected-works ul #line-3 {
             width: 20px;
-            background: yellow; }
+            background: purple; }
           body .container .middle .selected-works ul #line-2 {
             width: 60px;
-            background: purple; }
+            background: #00d3c5; }
           body .container .middle .selected-works ul #line-1 {
             width: 30px;
-            background: #00d3c5; }
+            background: #ff3333; }
       body .container .middle .art {
         width: 100%;
         height: 100%;
@@ -444,6 +444,9 @@ body {
                 font-size: 12px;
                 letter-spacing: 8px;
                 color: gray; } }
+          body .container .middle .art .titles .pseudorandom-title {
+            font-size: 15px;
+            letter-spacing: 12.5px; }
           body .container .middle .art .titles .pagination {
             text-align: center;
             color: #c8c8c8;
@@ -566,6 +569,8 @@ body {
             @media (max-width: 480px) {
               body .container .middle .art .images-div .art-images {
                 width: 87%; } }
+          body .container .middle .art .images-div .push-down-50 {
+            margin-bottom: 50px; }
           body .container .middle .art .images-div .titlzz {
             color: #989898; }
           body .container .middle .art .images-div .video {
@@ -588,8 +593,13 @@ body {
             @media (max-width: 480px) {
               body .container .middle .art .images-div .piecetitle {
                 width: 87%; } }
+          body .container .middle .art .images-div .buylink {
+            display: block;
+            color: red;
+            width: 35px; }
           body .container .middle .art .images-div .video-title {
-            width: 650px; }
+            width: 650px;
+            max-width: 650px; }
             @media (max-width: 480px) {
               body .container .middle .art .images-div .video-title {
                 width: 300px; } }

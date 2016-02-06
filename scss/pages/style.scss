@@ -338,27 +338,27 @@ body{
 
           #line-5{
             width: 10px;
-            background: #ff3333;
+            background: $dodger;
           }
 
           #line-4{
             width: 20px;
-            background: $dodger;
+            background: yellow;
           }
 
           #line-3{
             width: 20px;
-            background: yellow;
+            background: purple;
           }
 
           #line-2{
             width: 60px;
-            background: purple;
+            background: rgba(0, 211, 197, 1);
           }
 
           #line-1{
             width: 30px;
-            background: rgba(0, 211, 197, 1);
+            background: #ff3333;
           }
         }
       }
@@ -456,6 +456,11 @@ body{
               letter-spacing: 8px;
               color: gray;
             }
+          }
+
+          .pseudorandom-title {
+            font-size: 15px;
+            letter-spacing: 12.5px;
           }
 
           .pagination {
@@ -584,6 +589,10 @@ body{
             }
           }
 
+          .push-down-50 {
+            margin-bottom: 50px;
+          }
+
           .titlzz {
             color: #989898;
           }
@@ -611,8 +620,15 @@ body{
 
           }
 
+          .buylink {
+            display: block;
+            color: red;
+            width: 35px;
+          }
+
           .video-title {
             width: 650px;
+            max-width: 650px;
             @include xs {
               width: 300px;
             }

@@ -60,7 +60,7 @@ $(window).load(function () {
        
   }
 
-  $('.gallery-1').load("pages/stlucia.html");
+  $('.gallery-1').load("pages/pseudorandom.html");
   $('.gallery-2').load("pages/flowers.html");
   $('.gallery-3').load("pages/cycle.html");
   $('.gallery-4').load("pages/winterprep.html");
@@ -210,23 +210,23 @@ $(document).ready(function() {
       // art fadeins
 
         $('#mainlink5').click(function() {
-          artFadeIn(".stlucia", ".stlucia-images", ".stlucia-title");
-        });
-
-        $('#mainlink4').click(function() {
           artFadeIn(".floral", ".floral-images", ".floral-title");
         });
 
-        $('#mainlink3').click(function() {
+        $('#mainlink4').click(function() {
           artFadeIn(".cycle", ".cycle-images", ".cycle-title");
         });
 
-        $('#mainlink2').click(function() {
+        $('#mainlink3').click(function() {
           artFadeIn(".controlledwinterprep", ".control-images", ".control-title");
         });
 
-        $('#mainlink1').click(function() {
+        $('#mainlink2').click(function() {
           artFadeIn(".risingfalling", ".rising-images", ".rising-title");
+        });
+
+        $('#mainlink1').click(function() {
+          artFadeIn(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title");
         });
 
       
@@ -338,24 +338,10 @@ $(document).ready(function() {
 
           // st lucia
           $('#next4, #prev1').click(function() {
-              prevNextFade(".stlucia", ".stlucia-images", ".stlucia-title");
-          });
-
-          $('.page-link5').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".stlucia", ".stlucia-images", ".stlucia-title"); }, 500);
-            } 
-          });
-
-          //floral
-          $('#prev5, #next3').click(function() {
               prevNextFade(".floral", ".floral-images", ".floral-title");
           });
 
-          $('.page-link4').click(function() {
+          $('.page-link5').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -364,12 +350,12 @@ $(document).ready(function() {
             } 
           });
 
-          //cycle
-          $('#prev4, #next2').click(function() {
+          //floral
+          $('#prev5, #next3').click(function() {
               prevNextFade(".cycle", ".cycle-images", ".cycle-title");
           });
 
-          $('.page-link3').click(function() {
+          $('.page-link4').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -378,12 +364,12 @@ $(document).ready(function() {
             } 
           });
 
-          //controlled winter prep
-          $('#prev3, #next1').click(function() {
+          //cycle
+          $('#prev4, #next2').click(function() {
               prevNextFade(".controlledwinterprep", ".control-images", ".control-title");
           });
 
-          $('.page-link2').click(function() {
+          $('.page-link3').click(function() {
             if ($(this).hasClass('highlighted')) {
 
             } else {
@@ -392,9 +378,23 @@ $(document).ready(function() {
             } 
           });
 
+          //controlled winter prep
+          $('#prev3, #next1').click(function() {
+              prevNextFade(".risingfalling", ".rising-images", ".rising-title");
+          });
+
+          $('.page-link2').click(function() {
+            if ($(this).hasClass('highlighted')) {
+
+            } else {
+              artQuickFadeOut(".series", ".art-images", ".art-title");
+              setTimeout(function() {artQuickFadeIn(".risingfalling", ".rising-images", ".rising-title"); }, 500);
+            } 
+          });
+
           // rising/falling
           $('#prev2, #next5').click(function() {
-              prevNextFade(".risingfalling", ".rising-images", ".rising-title");
+              prevNextFade(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title");
           });
 
           $('.page-link1').click(function() {
@@ -402,7 +402,7 @@ $(document).ready(function() {
 
             } else {
               artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".risingfalling", ".rising-images", ".rising-title"); }, 500);
+              setTimeout(function() {artQuickFadeIn(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title"); }, 500);
             } 
           });
 
