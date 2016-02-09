@@ -20,8 +20,12 @@
     ga('send', 'pageview');
 
   </script>
+  <script type="text/javascript" src='js/angular.min.js'></script>
+  <script type="text/javascript" src="js/angular-router.js"></script>
+  <script type="text/javascript" src='js/app.js'></script>
+  <script type="text/javascript" src='js/controller.js'></script>
 </head>
-<body> 
+<body ng-app="mb-app"> 
   <div class="loading">
     <h1>MITCHELL BARTON</h1>
     <div class="progress">
@@ -53,19 +57,9 @@
       </ul>
     </div>
   </div>
-  <div class="container">
-    <div class="middle">
-      <div class="selected-works">
-        <h1 class="selected-works-title" id="flashing">SELECTED WORKS</h1>
-        <ul id="mainlink-ul">
-          <li id="linkz-1"><a class="mainlink" id="mainlink1" href="#"><span>01 /</span> PSEUDORANDOM LANDSCAPE<div class="line" id="line-1"></div></a></li>
-          <li id="linkz-2"><a class="mainlink" id="mainlink2" href="#"><span>02 /</span> RISING/FALLING<div class="line" id="line-2"></div></a></li>
-          <li id="linkz-3"><a class="mainlink" id="mainlink3" href="#"><span>03 /</span> CONTROLLED WINTER PREPARATION<div class="line" id="line-3"></div></a></li>
-          <li id="linkz-4"><a class="mainlink" id="mainlink4" href="#"><span>04 /</span> CYCLE<div class="line" id="line-4"></div></a></li>
-          <li id="linkz-5"><a class="mainlink" id="mainlink5" href="#"><span>05 /</span> FLORAL<div class="line" id="line-5"></div></a></li>
-        </ul>
-      </div>
-      <div class="art">
+  <div class="container" ng-controller="mb-control">
+    <div ng-view></div>
+      <!-- <div class="art">
         <div class="pseudorandom series">
           <div class="titles">
             <h1 class="pseudorandom-title art-title">PSEUDORANDOM LANDSCAPE</h1>
@@ -165,8 +159,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="about">
+    </div> -->
+    <!-- <div class="about">
       <div class="about-section" id="about-section1">
         <a class="about-backarrow" href="#"><span class="about-leftarrow">&larr;</span> <span class="gone">BACK</span></a>
         <h1>// <span id="who1">W</span><span id="who2">H</span><span id="who3">O</span> <span id="who4">I</span> <span id="who5">A</span><span id="who6">M</span></h1>
@@ -190,8 +184,7 @@
         <h1>// <span id="ex1">A</span><span id="ex2">W</span><span id="ex3">A</span><span id="ex4">R</span><span id="ex5">D</span><span id="ex6">S</span></h1>
         <p><span class="year">2015</span> Reverb Grant, The Department of Visual Arts, Brigham Young University</p>
         <p><span class="year">2010, 2013-16</span> Talent Award, The Department of Visual Arts, Brigham Young University</p>
-      </div>
-    </div>
+      </div> -->
   </div>
 </body>
 </html>
