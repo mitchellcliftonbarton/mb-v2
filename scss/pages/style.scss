@@ -28,10 +28,16 @@ html{
   height: 100%;
   -webkit-overlow-scrolling: touch;
 }
+
+@font-face {
+  font-family: Bespoke;
+  src: url('bespoke.ttf') format('truetype');
+}
+
 body{
   overflow-x: hidden;
   height: 100%;
-  font-family: Aktiv Grotesk, sans-serif;
+  font-family: Bespoke, sans-serif;
   text-decoration: none;
 
   .container {
@@ -44,8 +50,8 @@ body{
 
     h1 {
       font-size: 20px;
-      font-weight: lighter;
-      letter-spacing: 4px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
       margin-bottom: 20px;
     }
@@ -63,11 +69,13 @@ body{
 
       .big-menu {
         margin-bottom: 20px;
-        a {
-          color: #CACACA;
-          font-size: 20px;
-          letter-spacing: 1px;
-          font-weight: 400;
+
+        li {
+          a {
+            color: #CACACA;
+            font-size: 20px;
+            font-weight: 400;
+          }
         }
       }
 
@@ -78,8 +86,8 @@ body{
 
           a {
             font-size: 12px;
-            letter-spacing: 1.5px;
             color: #CACACA;
+            border-bottom: 2px solid #E0E0E0;
           }
         }
       }
@@ -92,8 +100,12 @@ body{
       width: 100%;
       height: 100%;
       top: 0px;
-      opacity: 0;
-      display: none;
+      z-index: -1;
+
+      .pseudorandom {
+        display: none;
+        opacity: 0;
+      }
     }
   }
 
