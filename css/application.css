@@ -57,7 +57,10 @@ body {
     border-bottom: 2px solid #c2c2c2;
     cursor: pointer;
     z-index: 2;
-    font-size: 12px; }
+    font-size: 12px;
+    -webkit-transition: border-bottom 0.3s;
+    -moz-transition: border-bottom 0.3s;
+    transition: border-bottom 0.3s; }
     body .menu-open .closed, body .menu-open .opened {
       position: absolute; }
     body .menu-open .closed {
@@ -115,12 +118,10 @@ body {
     height: 100%;
     padding: 0px 200px;
     position: fixed;
+    top: 0px;
     width: 100%;
     opacity: 1;
-    visibility: visible;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    transition: opacity 0.3s; }
+    visibility: visible; }
     body .menu .menu-dummy {
       width: 100%;
       height: 100%;
@@ -129,10 +130,7 @@ body {
       left: 0px;
       opacity: 1;
       visibility: visible;
-      background: none;
-      -webkit-transition: opacity 0.7s;
-      -moz-transition: opacity 0.7s;
-      transition: opacity 0.7s; }
+      background: none; }
     body .menu .holdit {
       z-index: 1; }
     body .menu .big-menu {
@@ -163,18 +161,12 @@ body {
         font-weight: 200;
         padding-bottom: 2px; }
   body .view {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
+    position: relative;
     z-index: -1; }
     body .view .pseudorandom, body .view .rising-falling, body .view .winterprep, body .view .cycle, body .view .floral, body .view .cv {
       display: none;
       opacity: 0;
-      margin-top: 100px;
-      -webkit-transition: margin-top 0.7s;
-      -moz-transition: margin-top 0.7s;
-      transition: margin-top 0.7s; }
+      margin-top: 100px; }
       body .view .pseudorandom h2, body .view .rising-falling h2, body .view .winterprep h2, body .view .cycle h2, body .view .floral h2, body .view .cv h2 {
         font-size: 12px;
         letter-spacing: 2.5px;
@@ -185,23 +177,14 @@ body {
         top: 45px;
         right: 47px;
         z-index: 1;
-        opacity: 0;
-        -webkit-transition: opacity 1s;
-        -moz-transition: opacity 1s;
-        transition: opacity 1s;
-        -webkit-transition: top 1s;
-        -moz-transition: top 1s;
-        transition: top 1s; }
+        opacity: 0; }
       body .view .pseudorandom img, body .view .rising-falling img, body .view .winterprep img, body .view .cycle img, body .view .floral img, body .view .cv img {
         width: 50%;
         max-width: 800px;
         margin: 0 auto;
         display: block;
         position: relative;
-        opacity: 0;
-        -webkit-transition: opacity 0.3s;
-        -moz-transition: opacity 0.3s;
-        transition: opacity 0.3s; }
+        opacity: 0; }
       body .view .pseudorandom .left-1, body .view .rising-falling .left-1, body .view .winterprep .left-1, body .view .cycle .left-1, body .view .floral .left-1, body .view .cv .left-1 {
         left: -10%; }
       body .view .pseudorandom .right-1, body .view .rising-falling .right-1, body .view .winterprep .right-1, body .view .cycle .right-1, body .view .floral .right-1, body .view .cv .right-1 {
@@ -224,10 +207,7 @@ body {
         font-size: 12px;
         line-height: 18px;
         position: relative;
-        opacity: 0;
-        -webkit-transition: opacity 0.3s;
-        -moz-transition: opacity 0.3s;
-        transition: opacity 0.3s; }
+        opacity: 0; }
       body .view .pseudorandom .buylink, body .view .rising-falling .buylink, body .view .winterprep .buylink, body .view .cycle .buylink, body .view .floral .buylink, body .view .cv .buylink {
         display: block;
         color: #FFAEAE;
@@ -237,10 +217,7 @@ body {
       body .view .pseudorandom iframe, body .view .rising-falling iframe, body .view .winterprep iframe, body .view .cycle iframe, body .view .floral iframe, body .view .cv iframe {
         margin: 0 auto;
         display: block;
-        opacity: 0;
-        -webkit-transition: opacity 0.3s;
-        -moz-transition: opacity 0.3s;
-        transition: opacity 0.3s; }
+        opacity: 0; }
     body .view .cv {
       margin-top: 100px; }
       body .view .cv .contain {
@@ -263,3 +240,14 @@ body {
           padding-right: 15px; }
         body .view .cv .contain p {
           color: #555; }
+  body .footer ul {
+    text-align: center; }
+    body .footer ul li {
+      display: inline-block;
+      padding: 60px 20px 80px 20px; }
+      body .footer ul li a {
+        color: #ccc; }
+      body .footer ul li .footer-current {
+        color: #555; }
+    body .footer ul span {
+      color: #E2E2E2; }
