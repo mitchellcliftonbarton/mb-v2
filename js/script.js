@@ -9,16 +9,51 @@ var color = ['rgba(0, 0, 255, 1)',
 
 var index = 0;
 var currentColor;
+var images = ['../images/book-photo-1.jpg', 
+              '../images/book-photo-2.jpg',
+              '../images/book-photo-3.jpg',
+              '../images/book-photo-4.jpg',
+              '../images/book-photo-5.jpg',
+              '../images/book-photo-cover.jpg',
+              '../images/cycle1.jpg',
+              '../images/cycle2.jpg',
+              '../images/cycle3.jpg',
+              '../images/cycle4.jpg',
+              '../images/cycle5.jpg',
+              '../images/cycle6.jpg',
+              '../images/cycle7.jpg',
+              '../images/lightbulb-1.jpg',
+              '../images/pseudo-1.jpg',
+              '../images/pseudo-2.jpg',
+              '../images/pseudo-5.jpg',
+              '../images/pseudo-7.jpg',
+              '../images/rising-falling-photo.jpg',
+              '../images/rising-falling-phtot2.jpg',
+              '../images/screenshot-1-new.jpg'];
 
-function opacityAn(element, amount) {
-  $(element).velocity({
-    opacity: amount
-  }, 300);
+function preLoad() {
+   
+  function loadit(el) {
+      el.onload = function() {
+    };
+  }
+
+  for (var i = 0; i < images.length; i++) {
+    var img = new Image();
+    var path = images[i];
+    img.src = path;
+    loadit(img);
+  }
+
+}
+
+function opacityAn(element, amount, time) {
+  $(element).css('opacity', amount);
 }
 
 function menuFadeOut() {
-  opacityAn('.menu', 0);
-  opacityAn('.menu-dummy', 0);
+  opacityAn('.menu', '0');
+  opacityAn('.menu-dummy', '0');
   setTimeout(function() {
     $('.menu').css('visibility', 'hidden');
     $('.menu-dummy').css('visibility', 'hidden');
@@ -26,17 +61,17 @@ function menuFadeOut() {
 }
 
 function menuFadeIn() {
-  opacityAn('.menu', 1);
+  opacityAn('.menu', '1');
   $('.menu').css('visibility', 'visible');
 }
 
 function menuFadeDummy () {
-  opacityAn('.menu-dummy', 1);
+  opacityAn('.menu-dummy', '1');
   $('.menu-dummy').css('visibility', 'visible');
 }
 
 function menuOpen() {
-  opacityAn('.menu-open', 1);
+  opacityAn('.menu-open', '1');
   $('.menu-open').css('visibility', 'visible');
 }
 
@@ -50,13 +85,13 @@ function switchColor() {
 function menuButtonColor() {
   $('.menu-open').removeClass('open');
   $('.menu-open').css({'color':'#555', 'border-bottom': '2px solid #555'});
-  opacityAn('.closed', 1);
-  opacityAn('.opened', 0);
+  opacityAn('.closed', '1');
+  opacityAn('.opened', '0');
 }
 
 function clearOut() {
   $('.view').empty();
-  opacityAn('.menu-open', 0);
+  opacityAn('.menu-open', '0');
   $('.menu-open').css('visibility', 'hidden');
   $('.holdit h1 a').css('color', '#c2c2c2');
   $('.big-menu a').css('color', '#555');
@@ -112,109 +147,101 @@ function projectFade(project, url) {
   $(project).css('opacity', '1');
   var images = '.' + url + ' img';
   var videos = '.' + url + ' iframe';
-  var container = '.view .' + url;
+  var container = '.view .' + url + ' .image-group';
   var titles = '.' + url + ' .piecetitle';
   setTimeout(function() {
-    opacityAn(images, 1);
-    opacityAn(videos, 1);
-    opacityAn(titles, 1);
+    opacityAn(images, '1');
+    opacityAn(videos, '1');
+    opacityAn(titles, '1');
     if ($(window).width > 440) {
-      $(container).velocity({
-        top: '120px',
-        easing: "ease-in"
-      }, 700);
+      $(container).css('transform', 'translateY(120px)')
     } else {
-      $(container).velocity({
-        top: '160px',
-        easing: "ease-in"
-      }, 700);
+      $(container).css('transform', 'translateY(120px)')
     }
-    
 
     setTimeout(function() {
-      opacityAn('.view .page-info', 1);
-      $('.view .page-info').velocity({
-        top: '49px',
-        easing: "ease-in"
-      }, 1000);
+      opacityAn('.view .page-info', '1');
+      $('.view .page-info').css('transform', 'translateY(49px)')
       // footerIn();
     }, 400);
 
   }, 600);
 }
 
-function footerClick(project) {
-  $('.footer a').click(function(e) {
-    e.preventDefault();    var href = this.href;
-    var $this = $(this);
-    if ($this.hasClass('footer-current')) {
-      $('body').velocity("scroll", {
-        offset: "0px"
-      }, 500);
-    } else {
-      opacityAn(project, 0);
-      // switchPage();
-      setTimeout(function() {
-        History.pushState('', 'Mitchell Barton', href);
-      }, 300);
-    } 
-
-    
-  });
-}
-
 function loadContent(url, fn) {
   $('.view').empty();
   setTimeout(function() {
     $('.loading').css('z-index', '3');
-    opacityAn('.loading', 1);
+    opacityAn('.loading', '1');
     $('.view').load('pages/' + url + '.html', fn);
     $('.view').css('z-index', '0');
   }, 100);
 }
 
-function gusto(p1, p2) {
+function footerClick(project, fn) {
+  $('.footer a').click(function(event) {
+    event.preventDefault();    
+    var href = this.href;
+    var $this = $(this);
+    if ($this.hasClass('footer-current')) {
+      $('body').animate("scroll", {
+        offset: "0px"
+      }, 500);
+    } else {
+      opacityAn(project, '0');
+      setTimeout(function() {
+        history.pushState('', 'Mitchell Barton', href);
+        fn();
+      }, 300);
+    } 
+  });
+}
+
+function gusto(p1, p2, p3) {
   loadContent(p1, function() {
     $('.loading').css('z-index', '0');
-    opacityAn('.loading', 0);
+    opacityAn('.loading', '0');
     setTimeout(function() {
       menuFadeOut();
       projectFade(p2, p1);
       menuOpen();
-      footerClick(p2);
-    }, 800);
+      setTimeout(function() {
+        opacityAn('.footer', '1');
+      }, 600);
+      footerClick(p2, p3);
+    }, 600);
   });
 }
 
 function switchPage() {
   var currentPg = window.location.href;
   var site = 'http://mitchellbarton.com';
-
   if (currentPg === (site) || currentPg === (site + '/')) {
     
   } else if (currentPg === (site + '/pseudorandom-landscape')) {
-    gusto('pseudorandom', '.view .pseudorandom');
+    gusto('pseudorandom', '.view .pseudorandom', switchPage);
   } else if (currentPg === (site + '/rising-falling')) {
-    gusto('rising-falling', '.view .rising-falling');
+    gusto('rising-falling', '.view .rising-falling', switchPage);
   } else if (currentPg === (site + '/controlled-winter-preparation')) {
-    gusto('winterprep', '.view .winterprep');
+    gusto('winterprep', '.view .winterprep', switchPage);
   } else if (currentPg === (site + '/cycle')) {
-    gusto('cycle', '.view .cycle');
+    gusto('cycle', '.view .cycle', switchPage);
   } else if (currentPg === (site + '/screenshots')) {
-    gusto('screenshots', '.view .screenshots');
+    gusto('screenshots', '.view .screenshots', switchPage);
   } else if (currentPg === (site + '/cv')) {
     loadContent('cv', function() {
       $('.loading').css('z-index', '0');
-      opacityAn('.loading', 0);
+      opacityAn('.loading', '0');
       menuFadeOut();
+      $('.view .cv').css('display', 'block');
       setTimeout(function() {
-        projectFade('.view .cv', null);
-          menuOpen();
-          footerClick('.view .cv');
-          $('.view .cv').velocity({
-            opacity: 1,
-            top: '30px'
-          }, 600);
+        menuOpen();
+        opacityAn('.view .cv', '1');
+        $('.view .cv').css('transform', 'translateY(30px)');
+        setTimeout(function() {
+          opacityAn('.footer', '1');
+        }, 600);
+        footerClick('.view .cv', switchPage);
       }, 800);
       
     });
@@ -226,12 +253,13 @@ function switchPage() {
 }
 
 $(window).load(function() {
+  preLoad();
   setTimeout(function() {
-    opacityAn('.loading', 0);
+    opacityAn('.loading', '0');
     setTimeout(function() {
       $('.loading').css('z-index', '0');
       setTimeout(function() {
-        opacityAn('.menu', 1);
+        opacityAn('.menu', '1');
       }, 600);
     }, 300);
   }, 800);
@@ -251,6 +279,7 @@ $(document).ready(function() {
   opaChange();
 
   switchPage();
+  // preLoad();
 
   if ($(window).width() > 800) {
     flash('a.pseudorandom-landscape', '#555', strobe3);
@@ -278,8 +307,8 @@ $(document).ready(function() {
       menuFadeIn();
       menuFadeDummy();
       $('.view').css('z-index', '-1');
-      opacityAn('.closed', 0);
-      opacityAn('.opened', 1);
+      opacityAn('.closed', '0');
+      opacityAn('.opened', '1');
       $(this).addClass('open');
     }
   });
@@ -303,14 +332,14 @@ $(document).ready(function() {
     event.preventDefault();
     menuFadeIn();
     clearOut();
-    opacityAn('.menu-dummy', 0);
+    opacityAn('.menu-dummy', '0');
     $('.menu-open').removeClass('open');
     // footer();
     // setTimeout(function() {
     //   $('.menu-dummy').css('visibility', 'hidden');
     // }, 2000);
     $('.view').css('z-index', '-1');
-    History.pushState('', 'Mitchell Barton', "/");
+    history.pushState('', 'Mitchell Barton', "/");
   });
 
   $('.big-menu a, .little-menu a').click(function(event) {
@@ -331,11 +360,8 @@ $(document).ready(function() {
         
       }
 
-      window.console.log(href);
-      
-      // switchPage();
-
-      History.pushState('', 'Mitchell Barton', href);
+      history.pushState('', 'Mitchell Barton', href);
+      switchPage();
     }
   });
 

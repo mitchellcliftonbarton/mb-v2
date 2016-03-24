@@ -91,9 +91,11 @@ body{
     z-index: 2;
     font-size: 12px;
     @include transition (border-bottom .3s);
+    @include transition (opacity .3s);
 
     .closed, .opened {
       position: absolute;
+      @include transition (opacity .3s);
     }
 
     .closed {
@@ -160,6 +162,7 @@ body{
     width: 100%;
     opacity: 0;
     visibility: visible;
+    @include transition (opacity .3s);
     @include sm {
       padding: 0px 90px;
     }
@@ -178,6 +181,7 @@ body{
       opacity: 1;
       visibility: visible;
       background: none;
+      @include transition (opacity .3s);
     }
 
     .holdit {
@@ -278,8 +282,7 @@ body{
     .pseudorandom, .rising-falling, .winterprep, .cycle, .screenshots, .cv {
       display: none;
       opacity: 0;
-      position: relative;
-      top: 100px;
+      @include transition (opacity .3s);
 
       @include xs {
         top: 140px;
@@ -287,7 +290,9 @@ body{
 
       .page-info {
         position: fixed;
-        top: 45px;
+        @include transform(translateY(38px));
+        @include transition (opacity 1.5s);
+        @include transition(transform 2s cubic-bezier(.165,.84,.44,1));
         right: 47px;
         opacity: 0;
         z-index: 1;
@@ -300,7 +305,19 @@ body{
           color: #555;
           margin-bottom: 30px;
         }
+
+        a {
+          color: #FFAEAE;
+          text-decoration: none;
+          font-size: 12px;
+          letter-spacing: 2.5px;
+        }
         
+      }
+
+      .image-group {
+        @include transform(translateY(85px));
+        @include transition(transform 2s cubic-bezier(.165,.84,.44,1));
       }
 
       img {
@@ -310,6 +327,7 @@ body{
         display: block;
         position: relative;
         opacity: 0;
+        @include transition (opacity 1.1s);
         @include sm {
           width: 70%;
         }
@@ -359,6 +377,7 @@ body{
         line-height: 18px;
         position: relative;
         opacity: 0;
+        @include transition (opacity 1.3s);
         @include sm {
           width: 70%;
         }
@@ -386,12 +405,15 @@ body{
         margin: 0 auto;
         display: block;
         opacity: 0;
+        @include transition (opacity 1.1s);
       }
     }
 
     .cv {
       position: relative;
-      top: 10px;
+      @include transform(translateY(10px));
+      @include transition(transform 2s cubic-bezier(.165,.84,.44,1), opacity .3s);
+      opacity: 0;
 
       .contain {
         width: 500px;
@@ -426,6 +448,8 @@ body{
   }
 
   .footer {
+    opacity: 0;
+    @include transition (opacity 1s);
     ul {
       text-align: center;
       font-weight: 100;
@@ -479,4 +503,3 @@ body{
   }
   
 }
-
