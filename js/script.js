@@ -121,7 +121,7 @@ function strobe6() {
 }
 
 function strobe7() {
-  strobe('a.screenshots');
+  strobe('a.experience-interface-user');
 }
 
 function flash(link, color, fn) {
@@ -154,15 +154,18 @@ function projectFade(project, url) {
     opacityAn(videos, '1');
     opacityAn(titles, '1');
     if ($(window).width > 440) {
-      $(container).css('transform', 'translateY(120px)')
+      $(container).css('transform', 'translateY(120px)');
     } else {
-      $(container).css('transform', 'translateY(120px)')
+      $(container).css('transform', 'translateY(192px)');
     }
 
     setTimeout(function() {
       opacityAn('.view .page-info', '1');
-      $('.view .page-info').css('transform', 'translateY(49px)')
-      // footerIn();
+      if ($(window).width > 440) {
+        $('.view .page-info').css('transform', 'translateY(25px)');
+      } else {
+        $('.view .page-info').css('transform', 'translateY(49px)');
+      }
     }, 400);
 
   }, 600);
@@ -184,9 +187,7 @@ function footerClick(project, fn) {
     var href = this.href;
     var $this = $(this);
     if ($this.hasClass('footer-current')) {
-      $('body').animate("scroll", {
-        offset: "0px"
-      }, 500);
+      
     } else {
       opacityAn(project, '0');
       setTimeout(function() {
@@ -226,8 +227,8 @@ function switchPage() {
     gusto('winterprep', '.view .winterprep', switchPage);
   } else if (currentPg === (site + '/cycle')) {
     gusto('cycle', '.view .cycle', switchPage);
-  } else if (currentPg === (site + '/screenshots')) {
-    gusto('screenshots', '.view .screenshots', switchPage);
+  } else if (currentPg === (site + '/experience-interface-user')) {
+    gusto('experience-interface-user', '.view .experience-interface-user', switchPage);
   } else if (currentPg === (site + '/cv')) {
     loadContent('cv', function() {
       $('.loading').css('z-index', '0');
@@ -286,7 +287,7 @@ $(document).ready(function() {
     flash('a.rising', '#555', strobe4);
     flash('a.winterprep', '#555', strobe5);
     flash('a.cycle', '#555', strobe6);
-    flash('a.screenshots', '#555', strobe7);
+    flash('a.experience-interface-user', '#555', strobe7);
   }
   
   
@@ -316,7 +317,7 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .cycle img, .screenshots img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .cycle img, .experience-interface-user img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollTop;
       var num = $(this).data('order');
