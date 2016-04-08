@@ -167,6 +167,8 @@ body{
 
     @include xs {
       padding: 0px;
+      height: auto;
+      position: relative;
 
     }
 
@@ -270,7 +272,7 @@ body{
     position: relative;
     z-index: -1;
 
-    .pseudorandom, .rising-falling, .winterprep, .cycle, .experience-interface-user, .cv {
+    .pseudorandom, .rising-falling, .winterprep, .suggestions, .screenshots, .a-little-bit-cooler, .cv {
       display: none;
       opacity: 0;
       @include transition (opacity .3s);
@@ -293,6 +295,7 @@ body{
           left: 20px;
           margin-top: 44px;
           text-align: left;
+          position: relative;
         }
 
 

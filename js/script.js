@@ -15,14 +15,18 @@ var images = ['../images/book-photo-1.jpg',
               '../images/book-photo-4.jpg',
               '../images/book-photo-5.jpg',
               '../images/book-photo-cover.jpg',
-              '../images/cycle1.jpg',
-              '../images/cycle2.jpg',
-              '../images/cycle3.jpg',
-              '../images/cycle4.jpg',
-              '../images/cycle5.jpg',
-              '../images/cycle6.jpg',
-              '../images/cycle7.jpg',
+              '../images/amazon-1.jpg',
+              '../images/amazon-4.jpg',
+              '../images/amazon-5.jpg',
+              '../images/t-rex-1.jpg',
               '../images/lightbulb-1.jpg',
+              '../images/j-3-2.jpg',
+              '../images/j-3.jpg',
+              '../images/j-7.jpg',
+              '../images/j-7-2.jpg',
+              '../images/jordan-ad4-print.jpg',
+              '../images/jordan-ad5-print.jpg',
+              '../images/jordan-ad6-print.jpg',
               '../images/pseudo-1.jpg',
               '../images/pseudo-2.jpg',
               '../images/pseudo-5.jpg',
@@ -117,11 +121,15 @@ function strobe5() {
 }
 
 function strobe6() {
-  strobe('a.cycle');
+  strobe('a.suggestions');
 }
 
 function strobe7() {
-  strobe('a.experience-interface-user');
+  strobe('a.screenshots');
+}
+
+function strobe8() {
+  strobe('a.a-little-bit-cooler');
 }
 
 function flash(link, color, fn) {
@@ -153,10 +161,11 @@ function projectFade(project, url) {
     opacityAn(images, '1');
     opacityAn(videos, '1');
     opacityAn(titles, '1');
+    /////// NOT SURE WHY THIS IS WORKING
     if ($(window).width > 440) {
-      $(container).css('transform', 'translateY(120px)');
+      $(container).css('transform', 'translateY(92px)');
     } else {
-      $(container).css('transform', 'translateY(192px)');
+      $(container).css('transform', 'translateY(120px)');
     }
 
     setTimeout(function() {
@@ -225,10 +234,12 @@ function switchPage() {
     gusto('rising-falling', '.view .rising-falling', switchPage);
   } else if (currentPg === (site + '/controlled-winter-preparation')) {
     gusto('winterprep', '.view .winterprep', switchPage);
-  } else if (currentPg === (site + '/cycle')) {
-    gusto('cycle', '.view .cycle', switchPage);
-  } else if (currentPg === (site + '/experience-interface-user')) {
-    gusto('experience-interface-user', '.view .experience-interface-user', switchPage);
+  } else if (currentPg === (site + '/suggestions')) {
+    gusto('suggestions', '.view .suggestions', switchPage);
+  } else if (currentPg === (site + '/screenshots')) {
+    gusto('screenshots', '.view .screenshots', switchPage);
+  } else if (currentPg === (site + '/a-little-bit-cooler')) {
+    gusto('a-little-bit-cooler', '.view .a-little-bit-cooler', switchPage);
   } else if (currentPg === (site + '/cv')) {
     loadContent('cv', function() {
       $('.loading').css('z-index', '0');
@@ -286,8 +297,9 @@ $(document).ready(function() {
     flash('a.pseudorandom-landscape', '#555', strobe3);
     flash('a.rising', '#555', strobe4);
     flash('a.winterprep', '#555', strobe5);
-    flash('a.cycle', '#555', strobe6);
-    flash('a.experience-interface-user', '#555', strobe7);
+    flash('a.suggestions', '#555', strobe6);
+    flash('a.screenshots', '#555', strobe7);
+    flash('a.a-little-bit-cooler', '#555', strobe8);
   }
   
   
@@ -317,7 +329,7 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .cycle img, .experience-interface-user img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .suggestions img, .screenshots img, .a-little-bit-cooler img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollTop;
       var num = $(this).data('order');
