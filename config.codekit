@@ -2964,6 +2964,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/fig-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 760249,
+		"inputAbbreviatedPath": "\/images\/fig-4.jpg",
+		"outputAbbreviatedPath": "\/images\/fig-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/fig-5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 919445,
+		"inputAbbreviatedPath": "\/images\/fig-5.jpg",
+		"outputAbbreviatedPath": "\/images\/fig-5.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/floral-bkg.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3389,6 +3411,28 @@
 		"initialSize": 243702,
 		"inputAbbreviatedPath": "\/images\/stlucia4.jpg",
 		"outputAbbreviatedPath": "\/images\/stlucia4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/suggestion-partner-1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 668685,
+		"inputAbbreviatedPath": "\/images\/suggestion-partner-1.jpg",
+		"outputAbbreviatedPath": "\/images\/suggestion-partner-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/suggestion-partner-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.28736e+06,
+		"inputAbbreviatedPath": "\/images\/suggestion-partner-2.jpg",
+		"outputAbbreviatedPath": "\/images\/suggestion-partner-2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -31,6 +31,10 @@ var images = ['../images/book-photo-1.jpg',
               '../images/pseudo-2.jpg',
               '../images/pseudo-5.jpg',
               '../images/pseudo-7.jpg',
+              '../images/fig-4.jpg',
+              '../images/fig-5.jpg',
+              '../images/suggestion-partner-1.jpg',
+              '../images/suggestion-partner-2.jpg',
               '../images/rising-falling-photo.jpg',
               '../images/rising-falling-phtot2.jpg',
               '../images/screenshot-1-new.jpg'];
@@ -62,11 +66,18 @@ function menuFadeOut() {
     $('.menu').css('visibility', 'hidden');
     $('.menu-dummy').css('visibility', 'hidden');
   }, 300);
+  if ($(window).width() < 800) {
+    $('.menu').css({'position':'fixed', 'height':'none'});
+    $('.menu-dummy').css('position', 'fixed');
+  }
 }
 
 function menuFadeIn() {
   opacityAn('.menu', '1');
   $('.menu').css('visibility', 'visible');
+  // if ($(window).width() < 800) {
+  //   $('.menu').css({'position':'relative', 'height':'none'});
+  // }
 }
 
 function menuFadeDummy () {
@@ -305,7 +316,7 @@ $(document).ready(function() {
   
   /// open up the menu/close the menu
 
-  $('.menu-open').click(function() {
+  $('.menu-open').click(function(event) {
     event.preventDefault();
     if ($(this).hasClass('open')) {
       menuFadeOut();
@@ -341,11 +352,16 @@ $(document).ready(function() {
 
   });
 
-  $('.holdit h1 a').click(function() {
+  $('.holdit h1 a').click(function(event) {
     event.preventDefault();
     menuFadeIn();
     clearOut();
     opacityAn('.menu-dummy', '0');
+    if ($(window).width() < 800) {
+      $('.menu').css({'position':'relative', 'height':'auto'});
+      $('.menu-dummy').css('position', 'relative');
+    }
+    
     $('.menu-open').removeClass('open');
     // footer();
     // setTimeout(function() {
@@ -385,6 +401,11 @@ $(document).ready(function() {
     if (path === '' || path === '/') {
       clearOut();
       menuFadeIn();
+      if ($(window).width() < 800) {
+        $('.menu').css({'position':'relative', 'height':'auto'});
+        $('.menu-dummy').css('position', 'relative');
+      }
+      
       $('.view').css('z-index', '-1');
     } else {
       switchPage();
