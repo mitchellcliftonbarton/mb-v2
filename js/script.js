@@ -9,7 +9,7 @@ var color = ['rgba(0, 0, 255, 1)',
 
 var index = 0;
 var currentColor;
-var images = ['../images/book-photo-1.jpg', 
+var images = ['../images/book-photo-1.jpg',
               '../images/book-photo-2.jpg',
               '../images/book-photo-3.jpg',
               '../images/book-photo-4.jpg',
@@ -33,6 +33,8 @@ var images = ['../images/book-photo-1.jpg',
               '../images/pseudo-7.jpg',
               '../images/fig-4.jpg',
               '../images/fig-5.jpg',
+              '../images/personal-website.jpg',
+              '../images/green-rock-3.jpg',
               '../images/suggestion-partner-1.jpg',
               '../images/suggestion-partner-2.jpg',
               '../images/rising-falling-photo.jpg',
@@ -136,7 +138,7 @@ function strobe6() {
 }
 
 function strobe7() {
-  strobe('a.screenshots');
+  strobe('a.black-sand-white-sand-grey-sand');
 }
 
 function strobe8() {
@@ -247,8 +249,8 @@ function switchPage() {
     gusto('winterprep', '.view .winterprep', switchPage);
   } else if (currentPg === (site + '/suggestions')) {
     gusto('suggestions', '.view .suggestions', switchPage);
-  } else if (currentPg === (site + '/screenshots')) {
-    gusto('screenshots', '.view .screenshots', switchPage);
+  } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
+    gusto('black-sand-white-sand-grey-sand', '.view .black-sand-white-sand-grey-sand', switchPage);
   } else if (currentPg === (site + '/a-little-bit-cooler')) {
     gusto('a-little-bit-cooler', '.view .a-little-bit-cooler', switchPage);
   } else if (currentPg === (site + '/cv')) {
@@ -309,7 +311,7 @@ $(document).ready(function() {
     flash('a.rising', '#555', strobe4);
     flash('a.winterprep', '#555', strobe5);
     flash('a.suggestions', '#555', strobe6);
-    flash('a.screenshots', '#555', strobe7);
+    flash('a.black-sand-white-sand-grey-sand', '#555', strobe7);
     flash('a.a-little-bit-cooler', '#555', strobe8);
   }
   
@@ -340,7 +342,7 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .suggestions img, .screenshots img, .a-little-bit-cooler img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollTop;
       var num = $(this).data('order');

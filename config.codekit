@@ -3041,6 +3041,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/green-rock-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.16381e+06,
+		"inputAbbreviatedPath": "\/images\/green-rock-3.jpg",
+		"outputAbbreviatedPath": "\/images\/green-rock-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/images\/cycle1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -3290,6 +3301,17 @@
 		"initialSize": 260953,
 		"inputAbbreviatedPath": "\/images\/lightbulb-1.jpg",
 		"outputAbbreviatedPath": "\/images\/lightbulb-1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/personal-website.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 664558,
+		"inputAbbreviatedPath": "\/images\/personal-website.jpg",
+		"outputAbbreviatedPath": "\/images\/personal-website.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3587,6 +3609,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/pages\/black-sand-white-sand-grey-sand.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/pages\/black-sand-white-sand-grey-sand.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/pages\/cv.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3610,15 +3641,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/pages\/rising-falling.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/pages\/screenshots.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/pages\/screenshots.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
