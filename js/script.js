@@ -1,436 +1,442 @@
-function linkzFadeOut () {
-  setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 30px)'); }, 50);
-  setTimeout(function() {$('#linkz-1').css('top', '-10px'); }, 150);
-  setTimeout(function() {$('#linkz-2').css('top', '-10px'); }, 250);
-  setTimeout(function() {$('#linkz-3').css('top', '-10px'); }, 350);
-  setTimeout(function() {$('#linkz-4').css('top', '-10px'); }, 450);
-  setTimeout(function() {$('#linkz-5').css('top', '-10px'); }, 550);
+var color = ['rgba(0, 0, 255, 1)',
+             'rgba(233, 249, 106, 1)',
+             'rgba(255, 0, 0, 1)',
+             'rgba(255, 192, 203, 1)',
+             'rgba(255, 81, 250, 1)',
+             'rgba(81, 143, 255, 1)',
+             'rgba(81, 255, 175, 1)',
+             'rgba(255, 106, 106, 1)'];
 
-  setTimeout(function() {$('.selected-works-title').css('opacity', '0'); }, 70);
-  setTimeout(function() {$('#linkz-1').css('opacity', '0'); }, 170);
-  setTimeout(function() {$('#linkz-2').css('opacity', '0'); }, 270);
-  setTimeout(function() {$('#linkz-3').css('opacity', '0'); }, 370);
-  setTimeout(function() {$('#linkz-4').css('opacity', '0'); }, 470);
-  setTimeout(function() {$('#linkz-5').css('opacity', '0'); }, 570);
+var index = 0;
+var currentColor;
+var images = ['../images/book-photo-1.jpg',
+              '../images/book-photo-2.jpg',
+              '../images/book-photo-3.jpg',
+              '../images/book-photo-4.jpg',
+              '../images/book-photo-5.jpg',
+              '../images/book-photo-cover.jpg',
+              '../images/amazon-1.jpg',
+              '../images/amazon-4.jpg',
+              '../images/amazon-5.jpg',
+              '../images/t-rex-1.jpg',
+              '../images/lightbulb-1.jpg',
+              '../images/j-3-2.jpg',
+              '../images/j-3.jpg',
+              '../images/j-7.jpg',
+              '../images/j-7-2.jpg',
+              '../images/jordan-ad4-print.jpg',
+              '../images/jordan-ad5-print.jpg',
+              '../images/jordan-ad6-print.jpg',
+              '../images/pseudo-1.jpg',
+              '../images/pseudo-2.jpg',
+              '../images/pseudo-5.jpg',
+              '../images/pseudo-7.jpg',
+              '../images/fig-4.jpg',
+              '../images/fig-5.jpg',
+              '../images/personal-website.jpg',
+              '../images/green-rock-3.jpg',
+              '../images/suggestion-partner-1.jpg',
+              '../images/suggestion-partner-2.jpg',
+              '../images/rising-falling-photo.jpg',
+              '../images/rising-falling-phtot2.jpg',
+              '../images/screenshot-1-new.jpg'];
 
-  setTimeout(function() {$('.selected-works-title').css('visibility', 'hidden'); }, 70);
-  setTimeout(function() {$('#linkz-1').css('visibility', 'hidden'); }, 170);
-  setTimeout(function() {$('#linkz-2').css('visibility', 'hidden'); }, 270);
-  setTimeout(function() {$('#linkz-3').css('visibility', 'hidden'); }, 370);
-  setTimeout(function() {$('#linkz-4').css('visibility', 'hidden'); }, 470);
-  setTimeout(function() {$('#linkz-5').css('visibility', 'hidden'); }, 570);
-}
-
-function linkzFadeIn () {
-  setTimeout(function() {$('.selected-works-title').css('top', 'calc(17% - 20px)'); }, 50);
-  setTimeout(function() {$('#linkz-1').css('top', '0px'); }, 150);
-  setTimeout(function() {$('#linkz-2').css('top', '0px'); }, 250);
-  setTimeout(function() {$('#linkz-3').css('top', '0px'); }, 350);
-  setTimeout(function() {$('#linkz-4').css('top', '0px'); }, 450);
-  setTimeout(function() {$('#linkz-5').css('top', '0px'); }, 550);
-
-
-  setTimeout(function() {$('.selected-works-title').css('opacity', '1'); }, 70);
-  setTimeout(function() {$('#linkz-1').css('opacity', '1'); }, 170);
-  setTimeout(function() {$('#linkz-2').css('opacity', '1'); }, 270);
-  setTimeout(function() {$('#linkz-3').css('opacity', '1'); }, 370);
-  setTimeout(function() {$('#linkz-4').css('opacity', '1'); }, 470);
-  setTimeout(function() {$('#linkz-5').css('opacity', '1'); }, 570);
-
-  setTimeout(function() {$('.selected-works-title').css('visibility', 'visible'); }, 70);
-  setTimeout(function() {$('#linkz-1').css('visibility', 'visible'); }, 170);
-  setTimeout(function() {$('#linkz-2').css('visibility', 'visible'); }, 270);
-  setTimeout(function() {$('#linkz-3').css('visibility', 'visible'); }, 370);
-  setTimeout(function() {$('#linkz-4').css('visibility', 'visible'); }, 470);
-  setTimeout(function() {$('#linkz-5').css('visibility', 'visible'); }, 570);
-  
-}
-
-$(window).load(function () {
-  if ($(window).width() > 480) {
-
-    setTimeout(function() {$('.bar').css('width', '100%');}, 200);
-    setTimeout(function() {
-      $('.loading').css('opacity', '0'); 
-      $('.mitchell').css('opacity', '1');
-      $('.mitchellbarton').css('top', 'calc(50% - 5px');
-      $('.menu-div').css({'opacity':'1', 'top':"calc(50% - 20px"});
-      setTimeout(function() {linkzFadeIn();}, 500); 
-    }, 700);
-       
+function preLoad() {
+   
+  function loadit(el) {
+      el.onload = function() {
+    };
   }
 
-  $('.gallery-1').load("pages/pseudorandom.html");
-  $('.gallery-2').load("pages/flowers.html");
-  $('.gallery-3').load("pages/cycle.html");
-  $('.gallery-4').load("pages/winterprep.html");
-  $('.gallery-5').load("pages/rising-falling.html");
-  
+  for (var i = 0; i < images.length; i++) {
+    var img = new Image();
+    var path = images[i];
+    img.src = path;
+    loadit(img);
+  }
+
+}
+
+function opacityAn(element, amount, time) {
+  $(element).css('opacity', amount);
+}
+
+function menuFadeOut() {
+  opacityAn('.menu', '0');
+  opacityAn('.menu-dummy', '0');
+  setTimeout(function() {
+    $('.menu').css('visibility', 'hidden');
+    $('.menu-dummy').css('visibility', 'hidden');
+  }, 300);
+  if ($(window).width() < 800) {
+    $('.menu').css({'position':'fixed', 'height':'none'});
+    $('.menu-dummy').css('position', 'fixed');
+  }
+}
+
+function menuFadeIn() {
+  opacityAn('.menu', '1');
+  $('.menu').css('visibility', 'visible');
+  // if ($(window).width() < 800) {
+  //   $('.menu').css({'position':'relative', 'height':'none'});
+  // }
+}
+
+function menuFadeDummy () {
+  opacityAn('.menu-dummy', '1');
+  $('.menu-dummy').css('visibility', 'visible');
+}
+
+function menuOpen() {
+  opacityAn('.menu-open', '1');
+  $('.menu-open').css('visibility', 'visible');
+}
+
+function switchColor() {
+  currentColor = color[(index++) % (color.length)];
+  $('.menu-dummy').css('background', currentColor);
+  $('.holdit h1 a, .big-menu a, .big-menu span').css('color', 'white');
+  $('.little-menu a').css({'color':'white', 'border-bottom':'2px solid white'});
+}
+
+function menuButtonColor() {
+  $('.menu-open').removeClass('open');
+  $('.menu-open').css({'color':'#555', 'border-bottom': '2px solid #555'});
+  opacityAn('.closed', '1');
+  opacityAn('.opened', '0');
+}
+
+function clearOut() {
+  $('.view').empty();
+  opacityAn('.menu-open', '0');
+  $('.menu-open').css('visibility', 'hidden');
+  $('.holdit h1 a').css('color', '#c2c2c2');
+  $('.big-menu a').css('color', '#555');
+  $('.little-menu a').css({'color':'#FFAEAE', 'border-bottom':'2px solid #FFAEAE'});
+  $('.big-menu span').css('color', '#c2c2c2');
+}
+
+function strobe(element) {
+  currentColor = color[(index++) % (color.length)];
+  $(element).css('color', currentColor);
+}
+
+function strobe3() {
+  strobe('a.pseudorandom-landscape');
+}
+
+function strobe4() {
+  strobe('a.rising');
+}
+
+function strobe5() {
+  strobe('a.winterprep');
+}
+
+function strobe6() {
+  strobe('a.suggestions');
+}
+
+function strobe7() {
+  strobe('a.black-sand-white-sand-grey-sand');
+}
+
+function strobe8() {
+  strobe('a.a-little-bit-cooler');
+}
+
+function flash(link, color, fn) {
+  var flashing;
+
+  $(link).mouseenter(function() {
+    flashing = setInterval(fn, 150);
+  });
+
+  $(link).mouseleave(function() {
+    clearInterval(flashing);
+    if($('.menu-open').hasClass('open')) {
+      $(this).css('color', 'white');
+    } else {
+      $(this).css('color', color);
+    }
+    
+  });
+}
+
+function projectFade(project, url) {
+  $(project).css('display', 'block');
+  $(project).css('opacity', '1');
+  var images = '.' + url + ' img';
+  var videos = '.' + url + ' iframe';
+  var container = '.view .' + url + ' .image-group';
+  var titles = '.' + url + ' .piecetitle';
+  setTimeout(function() {
+    opacityAn(images, '1');
+    opacityAn(videos, '1');
+    opacityAn(titles, '1');
+    /////// NOT SURE WHY THIS IS WORKING
+    if ($(window).width > 440) {
+      $(container).css('transform', 'translateY(92px)');
+    } else {
+      $(container).css('transform', 'translateY(120px)');
+    }
+
+    setTimeout(function() {
+      opacityAn('.view .page-info', '1');
+      if ($(window).width > 440) {
+        $('.view .page-info').css('transform', 'translateY(25px)');
+      } else {
+        $('.view .page-info').css('transform', 'translateY(49px)');
+      }
+    }, 400);
+
+  }, 600);
+}
+
+function loadContent(url, fn) {
+  $('.view').empty();
+  setTimeout(function() {
+    $('.loading').css('z-index', '3');
+    opacityAn('.loading', '1');
+    $('.view').load('pages/' + url + '.html', fn);
+    $('.view').css('z-index', '0');
+  }, 100);
+}
+
+function footerClick(project, fn) {
+  $('.footer a').click(function(event) {
+    event.preventDefault();    
+    var href = this.href;
+    var $this = $(this);
+    if ($this.hasClass('footer-current')) {
+      
+    } else {
+      opacityAn(project, '0');
+      setTimeout(function() {
+        history.pushState('', 'Mitchell Barton', href);
+        fn();
+      }, 300);
+    } 
+  });
+}
+
+function titleView() {
+  $(document).mousemove(function(e) {
+    var xc = e.pageX - 160;
+    var yc = e.pageY - 160;
+    $('.follow').css({'left': xc, 'top': yc})
+  });
+
+  // var ifr = $('.image-group iframe').contents().find('.check');
+
+  $('.image-group img').mouseenter(function() {
+    $('.follow').css('opacity', '1');
+
+    var info = $(this).data('info');
+    $('.follow').text(info);
+  });
+
+  $('.image-group img').mouseleave(function() {
+    $('.follow').css('opacity', '0');
+  });
+}
+
+function gusto(p1, p2, p3) {
+  loadContent(p1, function() {
+    $('.loading').css('z-index', '0');
+    opacityAn('.loading', '0');
+    setTimeout(function() {
+      menuFadeOut();
+      projectFade(p2, p1);
+      menuOpen();
+      setTimeout(function() {
+        opacityAn('.footer', '1');
+      }, 600);
+      footerClick(p2, p3);
+      titleView();
+    }, 600);
+  });
+}
+
+function switchPage() {
+  var currentPg = window.location.href;
+  var site = 'http://mitchellbarton.com';
+  if (currentPg === (site) || currentPg === (site + '/')) {
+    
+  } else if (currentPg === (site + '/pseudorandom-landscape')) {
+    gusto('pseudorandom', '.view .pseudorandom', switchPage);
+  } else if (currentPg === (site + '/rising-falling')) {
+    gusto('rising-falling', '.view .rising-falling', switchPage);
+  } else if (currentPg === (site + '/controlled-winter-preparation')) {
+    gusto('winterprep', '.view .winterprep', switchPage);
+  } else if (currentPg === (site + '/suggestions')) {
+    gusto('suggestions', '.view .suggestions', switchPage);
+  } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
+    gusto('black-sand-white-sand-grey-sand', '.view .black-sand-white-sand-grey-sand', switchPage);
+  } else if (currentPg === (site + '/a-little-bit-cooler')) {
+    gusto('a-little-bit-cooler', '.view .a-little-bit-cooler', switchPage);
+  } else if (currentPg === (site + '/cv')) {
+    loadContent('cv', function() {
+      $('.loading').css('z-index', '0');
+      opacityAn('.loading', '0');
+      menuFadeOut();
+      $('.view .cv').css('display', 'block');
+      setTimeout(function() {
+        menuOpen();
+        opacityAn('.view .cv', '1');
+        $('.view .cv').css('transform', 'translateY(30px)');
+        setTimeout(function() {
+          opacityAn('.footer', '1');
+        }, 600);
+        footerClick('.view .cv', switchPage);
+      }, 800);
+      
+    });
+  } else {
+    $('body').empty();
+    $('body').load('pages/wrong-page.html');
+    
+  }
+}
+
+$(window).load(function() {
+  preLoad();
+  setTimeout(function() {
+    opacityAn('.loading', '0');
+    setTimeout(function() {
+      $('.loading').css('z-index', '0');
+      setTimeout(function() {
+        opacityAn('.menu', '1');
+      }, 600);
+    }, 300);
+  }, 800);
 });
 
 $(document).ready(function() {
+  var fading;
+  function opaChange() {
+    fading = setInterval(oFlash, 200);
+  }
 
-      $('a').click(function(event) {
-        if ($(this).hasClass('real-link')) {
+  function oFlash() {
+    var opaElem = document.getElementById('load');
+    opaElem.style.opacity = opaElem.style.opacity === "0" ? "1" : "0";
+  }
 
-        } else {
-          event.preventDefault();
-        }
-      });
-      
-      $('.mainlink').click(function() {
-        linkzFadeOut(); 
-      });
+  opaChange();
 
-      //art fade in
+  switchPage();
+  // preLoad();
 
-      var delay1 = 1000;
-      var delay2 = 1050;
-      var delay3 = 1500;
-      var delay4 = 1100;
+  if ($(window).width() > 800) {
+    flash('a.pseudorandom-landscape', '#555', strobe3);
+    flash('a.rising', '#555', strobe4);
+    flash('a.winterprep', '#555', strobe5);
+    flash('a.suggestions', '#555', strobe6);
+    flash('a.black-sand-white-sand-grey-sand', '#555', strobe7);
+    flash('a.a-little-bit-cooler', '#555', strobe8);
+  }
+  
+  
+  /// open up the menu/close the menu
 
-      function artFadeIn(piece, pieceImages, pieceTitle) {
+  $('.menu-open').click(function(event) {
+    event.preventDefault();
+    if ($(this).hasClass('open')) {
+      menuFadeOut();
+      menuButtonColor();
+      setTimeout(function() {
+        $('.view').css('z-index', '0');
+      }, 300);
+    } else {
+      $(this).css('border-bottom', '2px solid white');
+      $(this).css('color', 'white');
+      switchColor();
+      menuFadeIn();
+      menuFadeDummy();
+      $('.view').css('z-index', '-1');
+      opacityAn('.closed', '0');
+      opacityAn('.opened', '1');
+      $(this).addClass('open');
+    }
+  });
 
-        setTimeout(function() {$('.art').css('z-index', '10'); }, delay1);
-        setTimeout(function() {$('.art').css('opacity', '1'); }, delay1);
-        setTimeout(function() {$('.series').css('opacity', '1'); }, delay1);
-        setTimeout(function() {$(piece).css('display', 'block'); }, delay1);
-        setTimeout(function() {$(pieceImages).css('display', 'block'); }, delay1);
+  $(window).on('scroll', function() {
+    var scrollTop = $(this).scrollTop() + 200;
 
-        setTimeout(function() {$('.images-div').css('opacity', '1'); }, delay1);
-        setTimeout(function() {$('.images-div').css('top', '180px'); }, delay2);
-        setTimeout(function() {$('.images-div').css('visibility', 'visible'); }, delay1); 
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
+      var topDistance = $(this).offset().top;
+      var pos = topDistance - scrollTop;
+      var num = $(this).data('order');
+      if (pos < 100 && pos > -100 ) {
+        $('.count').text(num);
+      }
+    });
 
-        setTimeout(function() {$(pieceTitle).css('opacity', '1'); }, delay3);
-        setTimeout(function() {$(pieceTitle).css('top', '10px'); }, delay3);
 
-        setTimeout(function() {$('.pagination').css('opacity', '1'); }, delay4);
-        setTimeout(function() {$('.pagination').css('top', '40px'); }, delay4);
+  });
 
-        if ($(window).width() > 480) {
-          setTimeout(function() {$('.backarrow').css('top', '0px'); }, delay4);
-          setTimeout(function() {$('.forwardarrow').css('top', '0px'); }, delay4);
-        }
+  $('.holdit h1 a').click(function(event) {
+    event.preventDefault();
+    menuFadeIn();
+    clearOut();
+    opacityAn('.menu-dummy', '0');
+    if ($(window).width() < 800) {
+      $('.menu').css({'position':'relative', 'height':'auto'});
+      $('.menu-dummy').css('position', 'relative');
+    }
+    
+    $('.menu-open').removeClass('open');
+    // footer();
+    // setTimeout(function() {
+    //   $('.menu-dummy').css('visibility', 'hidden');
+    // }, 2000);
+    $('.view').css('z-index', '-1');
+    history.pushState('', 'Mitchell Barton', "/");
+  });
+
+  $('.big-menu a, .little-menu a').click(function(event) {
+    if ($(this).hasClass('tumblr')) {
+      window.console.log('tumblr');
+    } else {
+      event.preventDefault();
+      // footer();
+      var href = this.href;
+      var $this = $(this);
+
+      $('a').removeClass('current');
+      $this.addClass('current');
+      menuButtonColor();
+      if ($this.hasClass('current')) {
+        menuFadeOut();
+      } else {
         
-        setTimeout(function() {$('.backarrow').css('opacity', '1'); }, delay4);
-        setTimeout(function() {$('.backarrow').css('z-index', '10'); }, delay4);
-        setTimeout(function() {$('.forwardarrow').css('opacity', '1'); }, delay4);
-        setTimeout(function() {$('.forwardarrow').css('z-index', '10'); }, delay4);
       }
 
-      // art fadeout
+      history.pushState('', 'Mitchell Barton', href);
+      switchPage();
+    }
+  });
 
-      function artFadeOut(piece, pieceImages, pieceTitle) {
+  window.onpopstate = function() {
+    var path = location.pathname;
+    var page = path.substring(location.pathname.lastIndexOf('/') + 1);
 
-        setTimeout(function() {$('.art').css('z-index', '-10'); }, delay1);
-        setTimeout(function() {$('.art').css('opacity', '0'); }, delay1);
-        setTimeout(function() {$('.series').css('opacity', '0'); }, delay1);
-        setTimeout(function() {$(piece).css('display', 'none'); }, delay1);
-        setTimeout(function() {$(pieceImages).css('display', 'none'); }, delay1);
-
-        $('.images-div').css('opacity', '0');
-        $('.images-div').css('top', '220px');
-        $('.images-div').css('visibility', 'hidden');
-
-        $(pieceTitle).css('opacity', '0');
-        $(pieceTitle).css('top', '-5px');
-
-        $('.pagination').css('opacity', '0'); 
-        $('.pagination').css('top', '27px'); 
-
-        if ($(window).width() > 480) {
-          $('.backarrow').css('top', '-20px');
-          $('.forwardarrow').css('top', '-20px');
-        }
-
-        $('.backarrow').css('opacity', '0');
-        $('.backarrow').css('z-index', '-10');
-        $('.forwardarrow').css('opacity', '0');
-        $('.forwardarrow').css('z-index', '-10');
+    if (path === '' || path === '/') {
+      clearOut();
+      menuFadeIn();
+      if ($(window).width() < 800) {
+        $('.menu').css({'position':'relative', 'height':'auto'});
+        $('.menu-dummy').css('position', 'relative');
       }
-
-      function artQuickFadeOut(piece, pieceImages, pieceTitle) {
-
-        //setTimeout(function() {$('.art').css('z-index', '-10'); }, delay1);
-        //setTimeout(function() {$('.art').css('opacity', '0'); }, delay1);
-        setTimeout(function() {$(piece).css('display', 'none'); }, 300);
-        $(piece).css('opacity', '0');
-        setTimeout(function() {$(pieceImages).css('display', 'none'); }, 300);
-
-        $('.images-div').css('opacity', '0');
-        setTimeout(function() {$('.images-div').css('top', '220px'); }, 300);
-        $('.images-div').css('visibility', 'hidden');
-
-        $(pieceTitle).css('opacity', '0');
-        $(pieceTitle).css('top', '-5px');
-
-        $('.pagination').css('opacity', '0'); 
-        $('.pagination').css('top', '27px'); 
-
-        if ($(window).width() > 480) {
-          $('.backarrow').css('top', '-20px');
-          $('.forwardarrow').css('top', '-20px');
-        }
-
-        $('.backarrow').css('opacity', '0');
-        $('.backarrow').css('z-index', '-10');
-        $('.forwardarrow').css('opacity', '0');
-        $('.forwardarrow').css('z-index', '-10');
-      }
-
-      function artQuickFadeIn(piece, pieceImages, pieceTitle) {
-
-        //setTimeout(function() {$('.art').css('z-index', '-10'); }, delay1);
-        //setTimeout(function() {$('.art').css('opacity', '0'); }, delay1);
-        setTimeout(function() {$(piece).css('display', 'block'); }, 300);
-        $(piece).css('opacity', '1');
-        setTimeout(function() {$(pieceImages).css('display', 'block'); }, 300);
-
-        setTimeout(function() {$('.images-div').css('opacity', '1'); }, 350);
-        setTimeout(function() {$('.images-div').css('top', '180px'); }, 400);
-        setTimeout(function() {$('.images-div').css('visibility', 'visible'); }, 350); 
-
-        setTimeout(function() {$(pieceTitle).css('opacity', '1'); }, 800);
-        setTimeout(function() {$(pieceTitle).css('top', '10px'); }, 800);
-
-        setTimeout(function() {$('.pagination').css('opacity', '1'); }, 450);
-        setTimeout(function() {$('.pagination').css('top', '40px'); }, 450);
-
-        if ($(window).width() > 480) {
-          setTimeout(function() {$('.backarrow').css('top', '0px'); }, 450);
-          setTimeout(function() {$('.forwardarrow').css('top', '0px'); }, 450);
-        }
-        
-        setTimeout(function() {$('.backarrow').css('opacity', '1'); }, 450);
-        setTimeout(function() {$('.backarrow').css('z-index', '10'); }, 450);
-        setTimeout(function() {$('.forwardarrow').css('opacity', '1'); }, 450);
-        setTimeout(function() {$('.forwardarrow').css('z-index', '10'); }, 450);
-      }
-
-      // art fadeins
-
-        $('#mainlink5').click(function() {
-          artFadeIn(".floral", ".floral-images", ".floral-title");
-        });
-
-        $('#mainlink4').click(function() {
-          artFadeIn(".cycle", ".cycle-images", ".cycle-title");
-        });
-
-        $('#mainlink3').click(function() {
-          artFadeIn(".controlledwinterprep", ".control-images", ".control-title");
-        });
-
-        $('#mainlink2').click(function() {
-          artFadeIn(".risingfalling", ".rising-images", ".rising-title");
-        });
-
-        $('#mainlink1').click(function() {
-          artFadeIn(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title");
-        });
-
       
+      $('.view').css('z-index', '-1');
+    } else {
+      switchPage();
+      menuButtonColor();
+    }
 
-      // art fadeouts
-
-        // home click
-
-          var delay5 = 900;
-
-          $('.mitchell, .about-backarrow').click(function() {
-            artFadeOut(".series", ".art-images", ".art-title");
-            
-            setTimeout(function() {$('.about').css('opacity', '0'); }, 200);
-            setTimeout(function() {$('.about').css('display', 'none'); }, 900);
-
-            setTimeout(function() {$('.middle').css('display', 'block'); }, 900);
-            setTimeout(function() {$('#about-section1').css('top', '30px'); }, 200);
-            setTimeout(function() {$('#about-section2').css('top', '30px'); }, 150);
-            setTimeout(function() {$('#about-section3').css('top', '30px'); }, 100);
-            setTimeout(function() {$('#about-section4').css('top', '30px'); }, 50);
-            setTimeout(function() {linkzFadeIn(); }, delay5);
-
-          });
-
-        // menu home click
-
-        // main menu slide
-
-          function menuSlide (originalwidth, clickedwidth, originalright, clickedright, otherright) {
-
-            if ($('.menu').hasClass('clicked')) {
-
-              $('.menu-div').css('right', clickedright);
-              $('.mitchellbarton').css('left', originalwidth);
-              $('.middle').css('right', clickedright);
-              $('.about').css('right', clickedright);
-              $('.main-menu').css('right', originalright);
-              $('.up').css('right', '138px');
-
-              $('.menu').removeClass('clicked');
-
-            } else {
-
-              $('.menu-div').css('right', otherright);
-              $('.mitchellbarton').css('left', clickedwidth);
-              $('.middle').css('right', otherright);
-              $('.about').css('right', otherright);
-              $('.main-menu').css('right', clickedright);
-              $('.up').css('right', '358px');
-
-              $('.menu').addClass('clicked');
-            
-            }
-          }
-
-          $('.menu').click(function() {
-            if ($(window).width() > 480) {
-              menuSlide('-53px', '-273px', '-220px', '0px', '220px');
-            }
-
-            else {
-              menuSlide('0%', '-100%', '-100%', '0%', '100%');
-            } 
-          });
-
-          $('.menu-home, .art-link').click(function() {
-            if ($(window).width() > 480) {
-              menuSlide('-53px', '-273px', '-220px', '0px', '220px');
-
-              setTimeout(function() {artFadeOut(".series", ".art-images", ".art-title"); }, 900);
-              setTimeout(function() {$('.about').css('opacity', '0'); }, 900);
-              setTimeout(function() {$('.about').css('display', 'none'); }, 1600);
-
-              setTimeout(function() {$('.middle').css('display', 'block'); }, 1600);
-              setTimeout(function() {$('#about-section1').css('top', '30px'); }, 900);
-              setTimeout(function() {$('#about-section2').css('top', '30px'); }, 850);
-              setTimeout(function() {$('#about-section3').css('top', '30px'); }, 800);
-              setTimeout(function() {$('#about-section4').css('top', '30px'); }, 750);
-              setTimeout(function() {linkzFadeIn(); }, 1800);
-            }
-
-            else {
-              menuSlide('0%', '-100%', '-100%', '0%', '100%');
-
-              setTimeout(function() {artFadeOut(".series", ".art-images", ".art-title"); }, 900);
-              setTimeout(function() {$('.about').css('opacity', '0'); }, 900);
-              setTimeout(function() {$('.about').css('display', 'none'); }, 1600);
-
-              setTimeout(function() {$('.middle').css('display', 'block'); }, 1600);
-              setTimeout(function() {$('#about-section1').css('top', '30px'); }, 900);
-              setTimeout(function() {$('#about-section2').css('top', '30px'); }, 850);
-              setTimeout(function() {$('#about-section3').css('top', '30px'); }, 800);
-              setTimeout(function() {$('#about-section4').css('top', '30px'); }, 750);
-              setTimeout(function() {linkzFadeIn(); }, 1800);
-            } 
-          });
-
-          
-
-        // prev/next links & page links
-
-          function prevNextFade(piece, pieceImages, pieceTitle) {
-            artQuickFadeOut(".series", ".art-images", ".art-title");
-            setTimeout(function() {artQuickFadeIn(piece, pieceImages, pieceTitle); }, 300);
-          }
-
-          //
-
-          // st lucia
-          $('#next4, #prev1').click(function() {
-              prevNextFade(".floral", ".floral-images", ".floral-title");
-          });
-
-          $('.page-link5').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".floral", ".floral-images", ".floral-title"); }, 500);
-            } 
-          });
-
-          //floral
-          $('#prev5, #next3').click(function() {
-              prevNextFade(".cycle", ".cycle-images", ".cycle-title");
-          });
-
-          $('.page-link4').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".cycle", ".cycle-images", ".cycle-title"); }, 500);
-            } 
-          });
-
-          //cycle
-          $('#prev4, #next2').click(function() {
-              prevNextFade(".controlledwinterprep", ".control-images", ".control-title");
-          });
-
-          $('.page-link3').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".controlledwinterprep", ".control-images", ".control-title"); }, 500);
-            } 
-          });
-
-          //controlled winter prep
-          $('#prev3, #next1').click(function() {
-              prevNextFade(".risingfalling", ".rising-images", ".rising-title");
-          });
-
-          $('.page-link2').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".risingfalling", ".rising-images", ".rising-title"); }, 500);
-            } 
-          });
-
-          // rising/falling
-          $('#prev2, #next5').click(function() {
-              prevNextFade(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title");
-          });
-
-          $('.page-link1').click(function() {
-            if ($(this).hasClass('highlighted')) {
-
-            } else {
-              artQuickFadeOut(".series", ".art-images", ".art-title");
-              setTimeout(function() {artQuickFadeIn(".pseudorandom", ".pseudorandom-images", ".pseudorandom-title"); }, 500);
-            } 
-          });
-
-      // about fade in
-
-        $('.about-link').click(function() {
-          if ($(window).width() > 480) {
-              menuSlide('-53px', '-273px', '-220px', '0px', '220px');
-            }
-
-            else {
-              menuSlide('0%', '-100%', '-100%', '0%', '100%');
-            } 
-
-          setTimeout(function() {artFadeOut(".series", ".art-images", ".art-title"); }, 900);
-          setTimeout(function() {linkzFadeOut(); }, 900);
-          setTimeout(function() {$('.middle').css('display', 'none'); }, 2000);
-          setTimeout(function() {$('.about').css('opacity', '1'); }, 2150);
-          setTimeout(function() {$('.about').css('display', 'block'); }, 2100);
-
-          setTimeout(function() {$('#about-section1').css('top', '0px'); }, 2200);
-          setTimeout(function() {$('#about-section2').css('top', '0px'); }, 2250);
-          setTimeout(function() {$('#about-section3').css('top', '0px'); }, 2300);
-          setTimeout(function() {$('#about-section4').css('top', '0px'); }, 2350);
-        });
-
-
-      // history changes
-
-      
+    $('a').removeClass('current');
+    $('[href="' + page + '"]').addClass('current');
+  };
 });
