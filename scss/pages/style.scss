@@ -131,22 +131,43 @@ body{
       text-align: left;
     }
 
-    a {
-      opacity: 1;
-      color: #c2c2c2;
-      text-decoration: none;
-      @include transition (opacity .3s);
-      &:hover {
-        opacity: .5;
-        @include transition (opacity .3s);
-      }
+    // a {
+    //   opacity: 1;
+    //   color: #c2c2c2;
+    //   text-decoration: none;
+    //   @include transition (opacity .3s);
+    //   &:hover {
+    //     opacity: .5;
+    //     @include transition (opacity .3s);
+    //   }
 
-      @include sm {
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
+    //   @include sm {
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
+  }
+
+  .bk-hm {
+    opacity: 0;
+    visibility: hidden;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 60px;
+    display: block;
+  }
+
+  .diagonal {
+    position: absolute;
+    transform: rotate(0deg);
+    text-decoration: none;
+    letter-spacing: 50px;
+    text-transform: uppercase;
+    font-size: 19px;
+    color: rgba(255, 86, 86, 0.34);
+    z-index: -1;
+    opacity: .7;
   }
 
   ul {
@@ -240,6 +261,7 @@ body{
     }
 
     .little-menu {
+      // margin-bottom: 30px;
       @include xs {
         text-align: left;
       }
@@ -280,13 +302,30 @@ body{
     position: relative;
     z-index: -1;
 
-    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv {
+    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv, .screenshots {
       display: none;
       opacity: 0;
       @include transition (opacity .3s);
 
       @include xs {
         top: 140px;
+      }
+
+      .bswsgs-text {
+        font-size: 13px;
+        line-height: 20px;
+        color: #555;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        margin-bottom: 150px;
+        width: 400px;
+        opacity: 0;
+        @include transition (opacity .5s);
+
+        a {
+          color: #FFAEAE;
+          text-decoration: none;
+        }
       }
 
       .page-info {
@@ -445,7 +484,7 @@ body{
       }
 
       .contain {
-        width: 500px;
+        width: 590px;
         margin: 0 auto;
         @include xs {
           width: 100%;

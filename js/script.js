@@ -39,7 +39,12 @@ var images = ['../images/book-photo-1.jpg',
               '../images/suggestion-partner-2.jpg',
               '../images/rising-falling-photo.jpg',
               '../images/rising-falling-phtot2.jpg',
-              '../images/screenshot-1-new.jpg'];
+              '../images/screenshot-1-new.jpg',
+              '../images/b-1.jpg',
+              '../images/b-2.jpg',
+              '../images/b-3.jpg',
+              '../images/b-4.jpg',
+              '../images/b-5.jpg'];
 
 function preLoad() {
    
@@ -57,16 +62,31 @@ function preLoad() {
 
 }
 
-function opacityAn(element, amount, time) {
+function opacityAn(element, amount) {
   $(element).css('opacity', amount);
 }
+
+var fading;
+
+function oFlash() {
+  var opaElem = document.getElementById('load');
+  opaElem.style.opacity = opaElem.style.opacity === "0" ? "1" : "0";
+}
+
+function opaChange() {
+  fading = setInterval(oFlash, 200);
+}
+
+opaChange();
 
 function menuFadeOut() {
   opacityAn('.menu', '0');
   opacityAn('.menu-dummy', '0');
+  opacityAn('.bk-hm', '0');
   setTimeout(function() {
     $('.menu').css('visibility', 'hidden');
     $('.menu-dummy').css('visibility', 'hidden');
+    $('.bk-hm').css('visibility', 'hidden');
   }, 300);
   if ($(window).width() < 800) {
     $('.menu').css({'position':'fixed', 'height':'none'});
@@ -76,7 +96,9 @@ function menuFadeOut() {
 
 function menuFadeIn() {
   opacityAn('.menu', '1');
+  opacityAn('.bk-hm', '1');
   $('.menu').css('visibility', 'visible');
+  $('.bk-hm').css('visibility', 'visible');
   // if ($(window).width() < 800) {
   //   $('.menu').css({'position':'relative', 'height':'none'});
   // }
@@ -95,7 +117,8 @@ function menuOpen() {
 function switchColor() {
   currentColor = color[(index++) % (color.length)];
   $('.menu-dummy').css('background', currentColor);
-  $('.holdit h1 a, .big-menu a, .big-menu span').css('color', 'white');
+  $('.diagonal').css('color', 'white');
+  $('.big-menu a, .big-menu span').css('color', 'white');
   $('.little-menu a').css({'color':'white', 'border-bottom':'2px solid white'});
 }
 
@@ -109,8 +132,10 @@ function menuButtonColor() {
 function clearOut() {
   $('.view').empty();
   opacityAn('.menu-open', '0');
+  opacityAn('.bk-hm', '0');
   $('.menu-open').css('visibility', 'hidden');
-  $('.holdit h1 a').css('color', '#c2c2c2');
+  $('.bk-hm').css('visibility', 'hidden');
+  $('.diagonal').css('color', 'rgba(255, 86, 86, 0.34)');
   $('.big-menu a').css('color', '#555');
   $('.little-menu a').css({'color':'#FFAEAE', 'border-bottom':'2px solid #FFAEAE'});
   $('.big-menu span').css('color', '#c2c2c2');
@@ -145,6 +170,10 @@ function strobe8() {
   strobe('a.a-little-bit-cooler');
 }
 
+function strobe9() {
+  strobe('a.screenshots');
+}
+
 function flash(link, color, fn) {
   var flashing;
 
@@ -170,10 +199,12 @@ function projectFade(project, url) {
   var videos = '.' + url + ' iframe';
   var container = '.view .' + url + ' .image-group';
   var titles = '.' + url + ' .piecetitle';
+  var ps = '.' + url + ' p';
   setTimeout(function() {
     opacityAn(images, '1');
     opacityAn(videos, '1');
     opacityAn(titles, '1');
+    opacityAn(ps, '1');
     /////// NOT SURE WHY THIS IS WORKING
     if ($(window).width > 440) {
       $(container).css('transform', 'translateY(92px)');
@@ -224,10 +255,8 @@ function titleView() {
   $(document).mousemove(function(e) {
     var xc = e.pageX - 160;
     var yc = e.pageY - 160;
-    $('.follow').css({'left': xc, 'top': yc})
+    $('.follow').css({'left': xc, 'top': yc});
   });
-
-  // var ifr = $('.image-group iframe').contents().find('.check');
 
   $('.image-group img').mouseenter(function() {
     $('.follow').css('opacity', '1');
@@ -275,6 +304,8 @@ function switchPage() {
     gusto('black-sand-white-sand-grey-sand', '.view .black-sand-white-sand-grey-sand', switchPage);
   } else if (currentPg === (site + '/a-little-bit-cooler')) {
     gusto('a-little-bit-cooler', '.view .a-little-bit-cooler', switchPage);
+  } else if (currentPg === (site + '/screenshots')) {
+    gusto('screenshots', '.view .screenshots', switchPage);
   } else if (currentPg === (site + '/cv')) {
     loadContent('cv', function() {
       $('.loading').css('z-index', '0');
@@ -313,19 +344,25 @@ $(window).load(function() {
 });
 
 $(document).ready(function() {
-  var fading;
-  function opaChange() {
-    fading = setInterval(oFlash, 200);
+
+  var rando;
+  var moreRando;
+  var emoreRando;
+
+  function randoRotate() {
+    rando = Math.random() * 360;
+    rando = Math.floor(rando);
+    moreRando = Math.random() * 40;
+    moreRando = Math.floor(moreRando);
+    emoreRando = Math.random() * 80;
+    emoreRando = Math.floor(emoreRando);
+
+    $('.diagonal').css({'transform': 'rotate(' + rando + 'deg)', 'top': emoreRando + '%', 'left': moreRando + '%'});
   }
 
-  function oFlash() {
-    var opaElem = document.getElementById('load');
-    opaElem.style.opacity = opaElem.style.opacity === "0" ? "1" : "0";
-  }
-
-  opaChange();
-
+  randoRotate();
   switchPage();
+
   // preLoad();
 
   if ($(window).width() > 800) {
@@ -335,6 +372,7 @@ $(document).ready(function() {
     flash('a.suggestions', '#555', strobe6);
     flash('a.black-sand-white-sand-grey-sand', '#555', strobe7);
     flash('a.a-little-bit-cooler', '#555', strobe8);
+    flash('a.screenshots', '#555', strobe9);
   }
   
   
@@ -352,6 +390,7 @@ $(document).ready(function() {
       $(this).css('border-bottom', '2px solid white');
       $(this).css('color', 'white');
       switchColor();
+      randoRotate();
       menuFadeIn();
       menuFadeDummy();
       $('.view').css('z-index', '-1');
@@ -364,7 +403,7 @@ $(document).ready(function() {
   $(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .screenshots img, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollTop;
       var num = $(this).data('order');
@@ -376,7 +415,7 @@ $(document).ready(function() {
 
   });
 
-  $('.holdit h1 a').click(function(event) {
+  $('.diagonal, .bk-hm').click(function(event) {
     event.preventDefault();
     menuFadeIn();
     clearOut();
@@ -409,8 +448,6 @@ $(document).ready(function() {
       menuButtonColor();
       if ($this.hasClass('current')) {
         menuFadeOut();
-      } else {
-        
       }
 
       history.pushState('', 'Mitchell Barton', href);
