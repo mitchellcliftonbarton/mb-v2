@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -20,7 +20,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -29,10 +29,23 @@ html{
   -webkit-overlow-scrolling: touch;
 }
 
+// @font-face {
+//   font-family: 'Yup';
+//   src: url('../../type/bespoke.eot');
+//   src: url('../../type/bespoke.svg'),
+//        url('../../type/bespoke.ttf'),
+//        url('../../type/bespoke.woff');
+// }
+
+// @-webkit-keyframes rotate {
+//   100% {-webkit-transform: 360px}
+// }
+
 body{
   overflow-x: hidden;
   // height: 100%;
   font-family: "aktiv-grotesk", sans-serif;
+  // font-family: 'Yup', 'aktiv-grotesk', sans-serif;
   text-decoration: none;
 
   .follow {
@@ -52,7 +65,10 @@ body{
     background: #FFAEAE;
     @include transition (opacity .3s);
     z-index: 3;
-    
+    @include xs {
+      display: none;
+    }
+
     .load-contain {
       width: 500px;
       margin: 0 auto;
@@ -159,6 +175,7 @@ body{
   }
 
   .diagonal {
+    font-family: 'aktiv-grotesk', sans-serif;
     position: absolute;
     transform: rotate(0deg);
     text-decoration: none;
@@ -167,7 +184,13 @@ body{
     font-size: 19px;
     color: rgba(255, 86, 86, 0.34);
     z-index: -1;
-    opacity: .7;
+    opacity: 0;
+    @include transition (transform 60s, opacity .3s);
+  }
+
+  .enter-in {
+    opacity: 0;
+    @include transition (opacity, 1s);
   }
 
   ul {
@@ -196,8 +219,6 @@ body{
 
     @include xs {
       padding: 0px;
-      height: auto;
-      position: relative;
 
     }
 
@@ -223,13 +244,18 @@ body{
 
     .big-menu {
       margin-bottom: 30px;
+      width: 75%;
       @include xs {
         text-align: left;
       }
 
       li {
+        display: inline;
+        margin-right: 30px;
         @include xs {
-          padding: 12px 0px;
+          margin-right: 0px;
+          padding: 8px 0px;
+          display: inline-block;
         }
         a {
           color: #555;
@@ -241,19 +267,25 @@ body{
           position: relative;
           opacity: 1;
           @include xs {
-            line-height: 31px;
-            font-size: 24px;
+            line-height: 19px;
+            font-size: 17px;
           }
 
-          span {
+          .num {
             position: absolute;
-            left: -27px;
+            left: -20px;
             font-size: 12px;
             color: #c2c2c2;
-            font-family: "aktiv-grotesk";
+            font-family: "aktiv-grotesk", sans-serif;
             top: -11px;
             @include xs {
               top: 0px;
+            }
+          }
+
+          .comma {
+            @include xs {
+                display: none;
             }
           }
         }
@@ -295,14 +327,17 @@ body{
       }
     }
 
-    
+
   }
 
   .view {
     position: relative;
     z-index: -1;
+    opacity: 1;
+    visibility: visible;
+    @include transition (opacity .3s);
 
-    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv, .screenshots {
+    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv, .screenshots, .net-presence {
       display: none;
       opacity: 0;
       @include transition (opacity .3s);
@@ -311,7 +346,7 @@ body{
         top: 140px;
       }
 
-      .bswsgs-text {
+      .info-text {
         font-size: 13px;
         line-height: 20px;
         color: #555;
@@ -321,6 +356,7 @@ body{
         width: 400px;
         opacity: 0;
         @include transition (opacity .5s);
+        position: relative;
 
         a {
           color: #FFAEAE;
@@ -364,7 +400,7 @@ body{
           z-index: 2;
           display: block;
         }
-        
+
       }
 
       .image-group {
@@ -383,6 +419,8 @@ body{
         display: block;
         position: relative;
         opacity: 0;
+        cursor: -webkit-zoom-in;
+        cursor: -moz-zoom-in;
         @include transition (opacity 1.1s);
         @include sm {
           width: 70%;
@@ -390,27 +428,6 @@ body{
 
         @include xs {
           width: 90%;
-        }
-      }
-
-      .left-1 {
-        left: -10%;
-      }
-
-      .right-1 {
-        right: -10%;
-      }
-
-      .left-2 {
-        left: -5%;
-      }
-
-      .right-2 {
-        right: -5%;
-      }
-
-      .left-1, .right-1, .left-2, .right-2 {
-        @include xs {
           left: 0px;
           right: 0px;
         }
@@ -466,6 +483,7 @@ body{
         opacity: 0;
         margin-bottom: 120px;
         @include transition (opacity 1.1s);
+        position: relative;
         @include xs {
           width: 85%;
           height: 85%;
@@ -509,6 +527,9 @@ body{
         a {
           color: #FFAEAE;
           text-decoration: none;
+        }
+
+        .push-right {
           padding-right: 15px;
         }
 
@@ -516,6 +537,28 @@ body{
           color: #555;
         }
       }
+    }
+  }
+
+  .fullscreen {
+    position: absolute;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    @include display(flex);
+    @include align-items(center);
+
+    img {
+      height: 90%;
+      opacity: 0;
+      display: block;
+      margin: 0 auto;
+      cursor: -webkit-zoom-out;
+      cursor: -moz-zoom-out;
+      @include transition (opacity .3s, transform 2s cubic-bezier(.165,.84,.44,1));
+      @include transform (scale(.98));
     }
   }
 
@@ -564,7 +607,7 @@ body{
       }
     }
   }
-  
+
   .wrong-page {
     h2 {
       position: absolute;
@@ -581,5 +624,5 @@ body{
       text-decoration: none;
     }
   }
-  
+
 }
