@@ -3,10 +3,10 @@
 .DS_Store
 .DS_Store?
 ._*
+.pdf
+.psd
+.zip
 
 
 config.codekit
 bower_components/
-images
-net-presence-1.0.psd
-type
