@@ -3,6 +3,13 @@
 .DS_Store
 .DS_Store?
 ._*
+.pdf
+.psd
+.zip
+
 
 config.codekit
 bower_components/
+.codekit-cache/
+type/
+images/
