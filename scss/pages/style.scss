@@ -45,8 +45,8 @@ html{
 body{
   overflow-x: hidden;
   // height: 100%;
-  font-family: "aktiv-grotesk", sans-serif;
-  // font-family: 'Yup', 'aktiv-grotesk', sans-serif;
+  // font-family: "aktiv-grotesk", sans-serif;
+  font-family: Arial, sans-serif;
   text-decoration: none;
 
   .follow {
@@ -200,7 +200,8 @@ body{
   }
 
   .diagonal {
-    font-family: 'aktiv-grotesk', sans-serif;
+    // font-family: 'aktiv-grotesk', sans-serif;
+    font-family: Arial, sans-serif;
     position: absolute;
     transform: rotate(0deg);
     text-decoration: none;
@@ -290,7 +291,8 @@ body{
           font-weight: 500;
           letter-spacing: 2px;
           line-height: 53px;
-          font-family: "aktiv-grotesk", helvetica;
+          // font-family: "aktiv-grotesk", helvetica;
+          font-family: Arial, sans-serif;
           position: relative;
           opacity: 1;
           @include xs {
@@ -303,7 +305,8 @@ body{
             left: -20px;
             font-size: 12px;
             color: #c2c2c2;
-            font-family: "aktiv-grotesk", sans-serif;
+            // font-family: "aktiv-grotesk", sans-serif;
+            font-family: Arial, sans-serif;
             top: -11px;
             @include xs {
               display: none;
@@ -559,14 +562,16 @@ body{
         }
 
         h1 {
-          font-family: "aktiv-grotesk", helvetica;
+          // font-family: "aktiv-grotesk", helvetica;
+          font-family: Arial, sans-serif;
           padding-top: 40px;
           color: #E0E0E0;
           font-size: 13px;
         }
 
         p, a {
-          font-family: "aktiv-grotesk", helvetica;
+          // font-family: "aktiv-grotesk", helvetica;
+          font-family: Arial, sans-serif;
           letter-spacing: 1px;
           font-weight: 100;
           font-size: 13px;
