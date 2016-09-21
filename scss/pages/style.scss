@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 html{
   // height: 100%;
   -webkit-overlow-scrolling: touch;
+  background: white;
 }
 
 // @font-face {
@@ -107,17 +108,20 @@ body{
     z-index: 2;
     font-size: 12px;
     @include transition (border-bottom .3s);
-    @include transition (opacity .3s);
+    @include transition(width .3s cubic-bezier(.165,.84,.44,1), bottom .3s cubic-bezier(.165,.84,.44,1), opacity .3s, background .3s);
     @include xs {
-      top: 20px;
+      top: auto;
       left: 20px;
+      bottom: 20px;
+      border: none;
+      padding: 9px;
+      box-shadow: 1px 2px 11px #f2f2f2;
+      background: white;
     }
 
     .closed, .opened {
       position: absolute;
       @include transition (opacity .3s);
-      @include xs {
-      }
     }
 
     .closed {
@@ -126,6 +130,10 @@ body{
       opacity: 1;
       color: #555;
       letter-spacing: 3px;
+      @include xs {
+        top: 13px;
+        left: 9px;
+      }
     }
 
     .opened {
@@ -134,6 +142,10 @@ body{
       opacity: 0;
       color: white;
       letter-spacing: 4.5px;
+      @include xs {
+        top: 13px;
+        left: 10px;
+      }
     }
   }
 
@@ -170,8 +182,21 @@ body{
     visibility: hidden;
     text-decoration: none;
     color: white;
-    margin-bottom: 60px;
     display: block;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    @include xs {
+      display: none;
+      width: 100%;
+      margin-bottom: 110px;
+    }
+    span {
+      display: none;
+      @include xs {
+        display: block;
+      }
+    }
   }
 
   .diagonal {
@@ -191,6 +216,12 @@ body{
   .enter-in {
     opacity: 0;
     @include transition (opacity, 1s);
+
+    .on-mob {
+      font-size: 19px;
+      letter-spacing: 6px;
+      display: inline-block;
+    }
   }
 
   ul {
@@ -206,21 +237,12 @@ body{
     @include flex-direction (column);
     @include justify-content (center);
     height: 100%;
-    padding: 0px 200px;
     position: fixed;
     top: 0px;
     width: 100%;
     opacity: 0;
     visibility: visible;
     @include transition (opacity .3s);
-    @include sm {
-      padding: 0px 90px;
-    }
-
-    @include xs {
-      padding: 0px;
-
-    }
 
     .menu-dummy {
       width: 100%;
@@ -238,15 +260,20 @@ body{
       z-index: 1;
       @include xs {
         padding: 32px;
-        margin-left: 18px;
+        margin-left: 4px;
+        margin-top: -50px;
       }
     }
 
     .big-menu {
-      margin-bottom: 30px;
       width: 75%;
+      margin: 0 auto;
+      margin-bottom: 30px;
+      @include transition (opacity .3s);
       @include xs {
         text-align: left;
+        opacity: 1;
+        width: 100%;
       }
 
       li {
@@ -255,7 +282,7 @@ body{
         @include xs {
           margin-right: 0px;
           padding: 8px 0px;
-          display: inline-block;
+          display: block;
         }
         a {
           color: #555;
@@ -279,11 +306,13 @@ body{
             font-family: "aktiv-grotesk", sans-serif;
             top: -11px;
             @include xs {
-              top: 0px;
+              display: none;
+
             }
           }
 
           .comma {
+            color: #555;
             @include xs {
                 display: none;
             }
@@ -293,9 +322,11 @@ body{
     }
 
     .little-menu {
-      // margin-bottom: 30px;
+      width: 75%;
+      margin: 0 auto;
       @include xs {
         text-align: left;
+        width: 100%;
       }
       li {
         display: inline-block;
@@ -343,7 +374,7 @@ body{
       @include transition (opacity .3s);
 
       @include xs {
-        top: 140px;
+        // top: 140px;
       }
 
       .info-text {
@@ -357,6 +388,11 @@ body{
         opacity: 0;
         @include transition (opacity .5s);
         position: relative;
+
+        @include xs {
+          width: 90%;
+          margin-bottom: 40px;
+        }
 
         a {
           color: #FFAEAE;
@@ -375,11 +411,16 @@ body{
         @include xs {
           @include transform(translateY(20px));
           left: 20px;
-          margin-top: 44px;
+          // margin-top: 44px;
+          position: absolute;
           text-align: left;
-          position: relative;
         }
 
+        .inventory {
+          @include xs {
+            display: none;
+          }
+        }
 
         h2, p {
           font-size: 12px;
@@ -430,6 +471,13 @@ body{
           width: 90%;
           left: 0px;
           right: 0px;
+          margin-bottom: 50px;
+        }
+
+        &:last-of-type {
+          @include xs {
+            margin-bottom: 115px;
+          }
         }
       }
 
@@ -487,6 +535,7 @@ body{
         @include xs {
           width: 85%;
           height: 85%;
+          margin-bottom: 50px;
         }
       }
     }
@@ -541,7 +590,7 @@ body{
   }
 
   .fullscreen {
-    position: absolute;
+    // position: absolute;
     top: 0;
     position: fixed;
     height: 100%;
@@ -568,6 +617,9 @@ body{
     ul {
       text-align: center;
       font-weight: 100;
+      @include xs {
+        display: none;
+      }
       li {
         display: inline-block;
         padding: 60px 20px 80px 20px;
