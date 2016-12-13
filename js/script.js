@@ -10,7 +10,12 @@ var color = ['rgba(0, 0, 255, 1)',
 var index = 0;
 var w = $(window);
 var currentColor;
-var images = ['../images/b-1.jpg',
+var images = ['../images/boxes.jpg',
+              '../images/chain.jpg',
+              '../images/flyer-2.jpg',
+              '../images/jersey-1.jpg',
+              '../images/sticker.jpg',
+              '../images/b-1.jpg',
               '../images/b-2.jpg',
               '../images/b-3.jpg',
               '../images/b-4.jpg',
@@ -26,6 +31,7 @@ var images = ['../images/b-1.jpg',
               '../images/net-presence-1.0.jpg',
               '../images/screenshot-1-new.jpg',
               '../images/green-rock-3.jpg',
+              '../images/sticker-book.jpg',
               '../images/amazon-1.jpg',
               '../images/amazon-4.jpg',
               '../images/amazon-5.jpg',
@@ -186,11 +192,11 @@ function strobe(element) {
 }
 
 function strobe3() {
-  strobe('a.pseudorandom-landscape');
+  strobe('a.pseudorandom');
 }
 
 function strobe4() {
-  strobe('a.rising');
+  strobe('a.rising-falling');
 }
 
 function strobe5() {
@@ -214,7 +220,7 @@ function strobe9() {
 }
 
 function strobe10() {
-  strobe('a.net-presence');
+  strobe('a.freestylez');
 }
 
 // function strobe11() {
@@ -275,7 +281,7 @@ function projectFade(project, url) {
     opacityAn(titles, '1');
     opacityAn(ps, '1');
     if (w.width() > 440) {
-      $(container).css('transform', 'translateY(120px)');
+      $(container).css('transform', 'translateY(170px)');
     } else {
       $(container).css('transform', 'translateY(92px)');
     }
@@ -299,6 +305,11 @@ function loadContent(url, fn) {
     opacityAn('.loading', '1');
     $('.view').load('pages/' + url + '.html', fn);
     $('.view').css('z-index', '0');
+
+    /// uncheck home link to show they have visited this link
+    var hmlink = '.big-menu a.' + url;
+    $(hmlink).css('text-decoration', 'none');
+    window.console.log('texted' + url);
   }, 100);
 }
 
@@ -414,8 +425,8 @@ function switchPage() {
     gusto('suggestions', '.view .suggestions', switchPage);
   } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
     gusto('black-sand-white-sand-grey-sand', '.view .black-sand-white-sand-grey-sand', switchPage);
-  } else if (currentPg === (site + '/net-presence')) {
-    gusto('net-presence', '.view .net-presence', switchPage);
+  } else if (currentPg === (site + '/freestylez')) {
+    gusto('freestylez', '.view .freestylez', switchPage);
   } else if (currentPg === (site + '/a-little-bit-cooler')) {
     gusto('a-little-bit-cooler', '.view .a-little-bit-cooler', switchPage);
   } else if (currentPg === (site + '/screenshots')) {
@@ -445,7 +456,7 @@ function switchPage() {
 }
 
 if (w.width() > 700) {
-  w.load(function() {
+  w.on('load', function() {
     preLoad();
     setTimeout(function() {
       opacityAn('.loading', '0');
@@ -462,7 +473,7 @@ if (w.width() > 700) {
     }, 500);
   });
 } else {
-  w.load(function() {
+  w.on('load', function() {
     preLoad();
     setTimeout(function() {
       opacityAn('.diagonal', '.7');
@@ -512,14 +523,14 @@ $(document).ready(function() {
   // preLoad();
 
   if (w.width() > 800) {
-    flash('a.pseudorandom-landscape', '#555', strobe3);
-    flash('a.rising', '#555', strobe4);
+    flash('a.pseudorandom', '#555', strobe3);
+    flash('a.rising-falling', '#555', strobe4);
     flash('a.winterprep', '#555', strobe5);
     flash('a.suggestions', '#555', strobe6);
     flash('a.black-sand-white-sand-grey-sand', '#555', strobe7);
     flash('a.a-little-bit-cooler', '#555', strobe8);
     flash('a.screenshots', '#555', strobe9);
-    flash('a.net-presence', '#555', strobe10);
+    flash('a.freestylez', '#555', strobe10);
   }
 
 
@@ -561,7 +572,7 @@ $(document).ready(function() {
   w.on('scroll', function() {
     var scrollT = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .screenshots img, .net-presence img, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .screenshots img, .freestylez img, .net-presence img, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollT;
       var num = $(this).data('order');
