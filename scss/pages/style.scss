@@ -327,6 +327,7 @@ body{
 
           .comma {
             color: #555;
+            display: none;
             @include xs {
                 display: none;
             }

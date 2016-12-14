@@ -515,10 +515,15 @@ $(document).ready(function() {
   function randoRotate() {
     randoPlace();
     randoSpin();
+    window.console.log('rando rotated');
   }
 
   randoRotate();
   switchPage();
+
+  $('.diagonal').click(function() {
+    randoRotate();
+  });
 
   // preLoad();
 
@@ -595,7 +600,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.diagonal, .bk-hm').click(function(event) {
+  $('.bk-hm').click(function(event) {
     event.preventDefault();
     menuFadeIn();
     clearOut();
