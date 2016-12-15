@@ -15,6 +15,8 @@ var images = ['../images/boxes.jpg',
               '../images/flyer-2.jpg',
               '../images/jersey-1.jpg',
               '../images/sticker.jpg',
+              '../images/card.jpg',
+              '../images/knuckles-1.jpg',
               '../images/b-1.jpg',
               '../images/b-2.jpg',
               '../images/b-3.jpg',
@@ -288,10 +290,15 @@ function projectFade(project, url) {
 
     setTimeout(function() {
       opacityAn('.view .page-info', '1');
+      opacityAn('.view .scroll', '1');
+      opacityAn('.view .pn', '1');
       if (w.width() > 440) {
         $('.view .page-info').css('transform', 'translateY(49px)');
+        $('.view .scroll').css('transform', 'translateY(49px)');
+        $('.view .pn').css('transform', 'translateY(49px)');
       } else {
         $('.view .page-info').css('transform', 'translateY(25px)');
+        // $('.view .scroll').css('transform', 'translateY(25px)');
       }
     }, 400);
 
@@ -522,6 +529,7 @@ $(document).ready(function() {
   switchPage();
 
   $('.diagonal').click(function() {
+    event.preventDefault();
     randoRotate();
   });
 
