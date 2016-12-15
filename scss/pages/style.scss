@@ -467,9 +467,14 @@ body{
         letter-spacing: 2.5px;
         right: 50px;
         text-align: right;
+        // @include transition(background-color 1s);
+
+        @include xs {
+          display: none;
+        }
 
         a {
-          color: #555;
+          color: #FFAEAE;
           text-decoration: none;
           display: block;
           margin-bottom: 30px;
@@ -481,7 +486,7 @@ body{
         opacity: 0;
         letter-spacing: 2.5px;
         // position: fixed;
-        @include transform(translateY(38px));
+        @include transform(translateY(49px));
         @include display(flex);
         @include justify-content(center);
         @include transition(transform 2s cubic-bezier(.165,.84,.44,1), opacity 1.5s);
@@ -490,7 +495,7 @@ body{
         }
 
         p {
-          color: #555;
+          color: #c7c7c7;
         }
       }
 
@@ -592,8 +597,6 @@ body{
 
     .cv {
       position: relative;
-      @include transform(translateY(10px));
-      @include transition(transform 2s cubic-bezier(.165,.84,.44,1), opacity .3s);
       opacity: 0;
       @include xs {
         padding: 20px;
@@ -603,6 +606,9 @@ body{
       .contain {
         width: 590px;
         margin: 0 auto;
+        @include transform(translateY(10px));
+        @include transition(transform 2s cubic-bezier(.165,.84,.44,1), opacity .3s);
+        margin-bottom: 100px;
         @include xs {
           width: 100%;
           margin-bottom: 50px;
