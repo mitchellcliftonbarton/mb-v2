@@ -202,7 +202,7 @@ function strobe4() {
 }
 
 function strobe5() {
-  strobe('a.winterprep');
+  strobe('a.foundation-myths');
 }
 
 function strobe6() {
@@ -426,8 +426,8 @@ function switchPage() {
     gusto('pseudorandom', '.view .pseudorandom', switchPage);
   } else if (currentPg === (site + '/rising-falling')) {
     gusto('rising-falling', '.view .rising-falling', switchPage);
-  } else if (currentPg === (site + '/controlled-winter-preparation')) {
-    gusto('winterprep', '.view .winterprep', switchPage);
+  } else if (currentPg === (site + '/foundation-myths')) {
+    gusto('foundation-myths', '.view .foundation-myths', switchPage);
   } else if (currentPg === (site + '/suggestions')) {
     gusto('suggestions', '.view .suggestions', switchPage);
   } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
@@ -540,7 +540,7 @@ $(document).ready(function() {
   if (w.width() > 800) {
     flash('a.pseudorandom', '#555', strobe3);
     flash('a.rising-falling', '#555', strobe4);
-    flash('a.winterprep', '#555', strobe5);
+    flash('a.foundation-myths', '#555', strobe5);
     flash('a.suggestions', '#555', strobe6);
     flash('a.black-sand-white-sand-grey-sand', '#555', strobe7);
     flash('a.a-little-bit-cooler', '#555', strobe8);
@@ -587,7 +587,7 @@ $(document).ready(function() {
   w.on('scroll', function() {
     var scrollT = $(this).scrollTop() + 200;
 
-    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .screenshots img, .freestylez img, .net-presence img, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
+    $('.pseudorandom img, .rising-falling img, .rising-falling iframe, .screenshots img, .foundation-myths img, .freestylez img, .net-presence img, .suggestions img, .black-sand-white-sand-grey-sand img, .a-little-bit-cooler img').each(function() {
       var topDistance = $(this).offset().top;
       var pos = topDistance - scrollT;
       var num = $(this).data('order');
