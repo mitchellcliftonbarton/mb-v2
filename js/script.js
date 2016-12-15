@@ -158,7 +158,7 @@ function menuButtonColor() {
   if (w.width() > 500) {
     $('.menu-open').css({'color':'#555', 'border-bottom': '2px solid #555'});
   } else {
-    $('.menu-open').css({'color':'#555', 'border': 'none'})
+    $('.menu-open').css({'color':'#555', 'border': 'none'});
     $('.menu-open').css('background-color', 'white');
   }
 
@@ -512,7 +512,7 @@ $(document).ready(function() {
   function randoSpin() {
     rando = Math.random() * 360;
     rando = Math.floor(rando);
-    var circ = rando - 1;
+    // var circ = rando - 1;
     $('.diagonal').css('-webkit-transform', 'rotate(' + rando + 'deg)');
     $('.diagonal').css('-ms-transform', 'rotate(' + rando + 'deg)');
     $('.diagonal').css('transform', 'rotate(' + rando + 'deg)');
