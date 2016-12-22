@@ -10,14 +10,15 @@ var color = ['rgba(0, 0, 255, 1)',
 var index = 0;
 var w = $(window);
 var currentColor;
-var images = ['../images/boxes.jpg',
+var freestylezpics = ['../images/boxes.jpg',
               '../images/chain.jpg',
               '../images/flyer-2.jpg',
               '../images/jersey-1.jpg',
               '../images/sticker.jpg',
               '../images/card.jpg',
-              '../images/knuckles-1.jpg',
-              '../images/b-1.jpg',
+              '../images/knuckles-1.jpg'];
+
+var bswsgspics = ['../images/b-1.jpg',
               '../images/b-2.jpg',
               '../images/b-3.jpg',
               '../images/b-4.jpg',
@@ -27,28 +28,34 @@ var images = ['../images/boxes.jpg',
               '../images/b-8.jpg',
               '../images/b-9.jpg',
               '../images/b-10.jpg',
-              '../images/b-11.jpg',
-              '../images/fig-4.jpg',
+              '../images/b-11.jpg'];
+
+var screenshotspics = ['../images/fig-4.jpg',
               '../images/fig-5.jpg',
-              '../images/net-presence-1.0.jpg',
               '../images/screenshot-1-new.jpg',
               '../images/green-rock-3.jpg',
               '../images/sticker-book.jpg',
-              '../images/amazon-1.jpg',
+              '../images/green-rail.jpg',
+              '../images/yellow-rail-1.jpg'
+              ];
+
+var suggestionspics = ['../images/amazon-1.jpg',
               '../images/amazon-4.jpg',
               '../images/amazon-5.jpg',
               '../images/t-rex-1.jpg',
               '../images/lightbulb-1.jpg',
               '../images/suggestion-partner-1.jpg',
-              '../images/suggestion-partner-2.jpg',
-              '../images/j-3-2.jpg',
+              '../images/suggestion-partner-2.jpg'];
+
+var alittlebitcoolerpics = ['../images/j-3-2.jpg',
               '../images/j-3.jpg',
               '../images/j-7.jpg',
               '../images/j-7-2.jpg',
               '../images/jordan-ad4-print.jpg',
               '../images/jordan-ad5-print.jpg',
-              '../images/jordan-ad6-print.jpg',
-              '../images/book-photo-cover.jpg',
+              '../images/jordan-ad6-print.jpg'];
+
+var pseudopics = ['../images/book-photo-cover.jpg',
               '../images/book-photo-1.jpg',
               '../images/book-photo-2.jpg',
               '../images/book-photo-3.jpg',
@@ -57,9 +64,14 @@ var images = ['../images/boxes.jpg',
               '../images/pseudo-1.jpg',
               '../images/pseudo-2.jpg',
               '../images/pseudo-5.jpg',
-              '../images/pseudo-7.jpg',
-              '../images/rising-falling-photo.jpg',
+              '../images/pseudo-7.jpg'];
+
+var risingfallingpics = ['../images/rising-falling-photo.jpg',
               '../images/rising-falling-phtot2.jpg'];
+
+var images = ['../images/net-presence-1.0.jpg'];
+
+images.push(freestylezpics, bswsgspics, screenshotspics, suggestionspics, alittlebitcoolerpics, pseudopics, risingfallingpics);
 
 ///// Function to preload images //////
 
@@ -303,6 +315,29 @@ function projectFade(project, url) {
     }, 400);
 
   }, 600);
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+function picOrder() {
+
 }
 
 function loadContent(url, fn) {
