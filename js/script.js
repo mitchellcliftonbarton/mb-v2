@@ -18,6 +18,16 @@ var freestylezpics = ['../images/boxes.jpg',
               '../images/card.jpg',
               '../images/knuckles-1.jpg'];
 
+var foundationpics = ['../images/after-a-moment-to-look-forward-to.jpg',
+                      '../images/billenium.jpg',
+                      '../images/dino-1.jpg',
+                      '../images/dino-2.jpg',
+                      '../images/dino-3.jpg',
+                      '../images/dino-5.jpg',
+                      '../images/pages-future.jpg',
+                      '../images/pages-rituals.jpg',
+                      '../images/pages.jpg'];
+
 var bswsgspics = ['../images/b-1.jpg',
               '../images/b-2.jpg',
               '../images/b-3.jpg',
@@ -317,27 +327,40 @@ function projectFade(project, url) {
   }, 600);
 }
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
+// function shuffle(array) {
+//   var currentIndex = array.length, temporaryValue, randomIndex;
+//
+//   // While there remain elements to shuffle...
+//   while (0 !== currentIndex) {
+//
+//     // Pick a remaining element...
+//     randomIndex = Math.floor(Math.random() * currentIndex);
+//     currentIndex -= 1;
+//
+//     // And swap it with the current element.
+//     temporaryValue = array[currentIndex];
+//     array[currentIndex] = array[randomIndex];
+//     array[randomIndex] = temporaryValue;
+//   }
+//
+//   return array;
+// }
 
 function picOrder() {
+  var imgs = document.querySelector('.image-rando');
+  // window.console.log(imgs);
+  for (var i = imgs.children.length; i >= 0; i--) {
+    imgs.appendChild(imgs.children[Math.random() * i | 0]);
+    // window.console.log('i = ' + i);
+    // window.console.log(imgs.children[i]);
+    // imgs.children[i].data('order', i);
+  }
 
+  for (var i = 0; i < imgs.children.length; i++) {
+    var img = imgs.children[i];
+    $(img).data('order', i + 1);
+    // window.console.log(img);
+  }
 }
 
 function loadContent(url, fn) {
@@ -351,24 +374,38 @@ function loadContent(url, fn) {
     /// uncheck home link to show they have visited this link
     var hmlink = '.big-menu a.' + url;
     $(hmlink).css('text-decoration', 'none');
-    window.console.log('texted' + url);
+    // window.console.log('texted' + url);
   }, 100);
 }
 
-function footerClick(project, fn) {
-  $('.footer a').click(function(event) {
+// function footerClick(project, fn) {
+//   $('.footer a').click(function(event) {
+//     event.preventDefault();
+//     var href = this.href;
+//     var $this = $(this);
+//     if ($this.hasClass('footer-current')) {
+//
+//     } else {
+//       opacityAn(project, '0');
+//       setTimeout(function() {
+//         history.pushState('', 'Mitchell Barton', href);
+//         fn();
+//       }, 300);
+//     }
+//   });
+// }
+
+function pnClick(project, fn) {
+  $('.pn a').click(function(event) {
     event.preventDefault();
     var href = this.href;
-    var $this = $(this);
-    if ($this.hasClass('footer-current')) {
-
-    } else {
-      opacityAn(project, '0');
-      setTimeout(function() {
-        history.pushState('', 'Mitchell Barton', href);
-        fn();
-      }, 300);
-    }
+    // var $this = $(this);
+    opacityAn(project, '0');
+    setTimeout(function() {
+      history.pushState('', 'Mitchell Barton', href);
+      fn();
+    }, 300);
+    // window.console.log('pnd');
   });
 }
 
@@ -432,8 +469,18 @@ function titleView() {
   });
 }
 
+function randoStVid() {
+  $('.foundation-myths iframe').each(function() {
+    var rando = Math.random() * 600;
+    rando = Math.floor(rando);
+
+    var vid = $(this).attr('src');
+  });
+}
+
 function gusto(p1, p2, p3) {
   loadContent(p1, function() {
+    picOrder();
     $('.loading').css('z-index', '0');
     opacityAn('.loading', '0');
     setTimeout(function() {
@@ -447,7 +494,8 @@ function gusto(p1, p2, p3) {
         goFull();
         titleView();
       }
-      footerClick(p2, p3);
+      // footerClick(p2, p3);
+      pnClick(p2, p3);
     }, 100);
   });
 }
@@ -463,6 +511,7 @@ function switchPage() {
     gusto('rising-falling', '.view .rising-falling', switchPage);
   } else if (currentPg === (site + '/foundation-myths')) {
     gusto('foundation-myths', '.view .foundation-myths', switchPage);
+    randoStVid();
   } else if (currentPg === (site + '/suggestions')) {
     gusto('suggestions', '.view .suggestions', switchPage);
   } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
@@ -488,7 +537,8 @@ function switchPage() {
         setTimeout(function() {
           opacityAn('.footer', '1');
         }, 600);
-        footerClick('.view .cv', switchPage);
+        // footerClick('.view .cv'l switchPage);
+        pnClick('.view .cv', switchPage);
       }, 800);
 
     });

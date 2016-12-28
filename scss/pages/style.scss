@@ -415,6 +415,10 @@ body{
         }
       }
 
+      .wid-500 {
+        width: 500px;
+      }
+
       .page-info, .pn {
         position: fixed;
         @include transform(translateY(38px));
