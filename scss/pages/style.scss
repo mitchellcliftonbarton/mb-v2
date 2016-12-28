@@ -302,6 +302,10 @@ body{
             font-size: 17px;
           }
 
+          &:hover {
+            text-decoration: none;
+          }
+
           .num {
             position: absolute;
             left: -20px;
@@ -415,10 +419,6 @@ body{
         }
       }
 
-      .wid-500 {
-        width: 500px;
-      }
-
       .page-info, .pn {
         position: fixed;
         @include transform(translateY(38px));
@@ -462,6 +462,10 @@ body{
           margin-bottom: 30px;
           z-index: 2;
           display: block;
+
+          @include xs {
+            display: none;
+          }
         }
 
       }
@@ -616,7 +620,7 @@ body{
         margin-bottom: 100px;
         @include xs {
           width: 100%;
-          margin-bottom: 50px;
+          margin-bottom: 100px;
         }
 
         h1 {
@@ -634,6 +638,10 @@ body{
           font-weight: 100;
           font-size: 13px;
           line-height: 20px;
+
+          @include xs {
+            margin-bottom: 20px;
+          }
         }
 
         a {

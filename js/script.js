@@ -16,7 +16,8 @@ var freestylezpics = ['../images/boxes.jpg',
               '../images/jersey-1.jpg',
               '../images/sticker.jpg',
               '../images/card.jpg',
-              '../images/knuckles-1.jpg'];
+              '../images/knuckles-1.jpg',
+              '../images/freestylez.gif'];
 
 var foundationpics = ['../images/after-a-moment-to-look-forward-to.jpg',
                       '../images/billenium.jpg',
