@@ -1,3 +1,5 @@
+///// random colors
+
 var color = ['rgba(0, 0, 255, 1)',
              'rgba(255, 167, 77, 1)',
              'rgba(255, 0, 0, 1)',
@@ -5,31 +7,34 @@ var color = ['rgba(0, 0, 255, 1)',
              'rgba(255, 81, 250, 1)',
              'rgba(81, 143, 255, 1)',
              'rgba(81, 255, 175, 1)',
-             'rgba(255, 106, 106, 1)'];
+             'rgba(255, 106, 106, 1)',
+             'wheat'];
 
 var index = 0;
 var w = $(window);
 var currentColor;
-var freestylezpics = ['../images/boxes.jpg',
+
+////// images for preload
+
+var images = ['../images/net-presence-1.0.jpg',
+              '../images/boxes.jpg',
               '../images/chain.jpg',
               '../images/flyer-2.jpg',
               '../images/jersey-1.jpg',
               '../images/sticker.jpg',
               '../images/card.jpg',
               '../images/knuckles-1.jpg',
-              '../images/freestylez.gif'];
-
-var foundationpics = ['../images/after-a-moment-to-look-forward-to.jpg',
-                      '../images/billenium.jpg',
-                      '../images/dino-1.jpg',
-                      '../images/dino-2.jpg',
-                      '../images/dino-3.jpg',
-                      '../images/dino-5.jpg',
-                      '../images/pages-future.jpg',
-                      '../images/pages-rituals.jpg',
-                      '../images/pages.jpg'];
-
-var bswsgspics = ['../images/b-1.jpg',
+              '../images/freestylez.gif',
+              '../images/after-a-moment-to-look-forward-to.jpg',
+              '../images/billenium.jpg',
+              '../images/dino-1.jpg',
+              '../images/dino-2.jpg',
+              '../images/dino-3.jpg',
+              '../images/dino-5.jpg',
+              '../images/pages-future.jpg',
+              '../images/pages-rituals.jpg',
+              '../images/pages.jpg',
+              '../images/b-1.jpg',
               '../images/b-2.jpg',
               '../images/b-3.jpg',
               '../images/b-4.jpg',
@@ -39,34 +44,36 @@ var bswsgspics = ['../images/b-1.jpg',
               '../images/b-8.jpg',
               '../images/b-9.jpg',
               '../images/b-10.jpg',
-              '../images/b-11.jpg'];
-
-var screenshotspics = ['../images/fig-4.jpg',
+              '../images/b-11.jpg',
+              '../images/fig-4.jpg',
               '../images/fig-5.jpg',
               '../images/screenshot-1-new.jpg',
               '../images/green-rock-3.jpg',
               '../images/sticker-book.jpg',
               '../images/green-rail.jpg',
-              '../images/yellow-rail-1.jpg'
-              ];
-
-var suggestionspics = ['../images/amazon-1.jpg',
+              '../images/yellow-rail-1.jpg',
+              '../images/fig-3.jpg',
+              '../images/fig-6.jpg',
+              '../images/pole-1.jpg',
+              '../images/pole-2.jpg',
+              '../images/poles-3.jpg',
+              '../images/poles-4.jpg',
+              '../images/amazon-1.jpg',
+              '../images/amazon-2.jpg',
               '../images/amazon-4.jpg',
               '../images/amazon-5.jpg',
               '../images/t-rex-1.jpg',
               '../images/lightbulb-1.jpg',
               '../images/suggestion-partner-1.jpg',
-              '../images/suggestion-partner-2.jpg'];
-
-var alittlebitcoolerpics = ['../images/j-3-2.jpg',
+              '../images/suggestion-partner-2.jpg',
+              '../images/j-3-2.jpg',
               '../images/j-3.jpg',
               '../images/j-7.jpg',
               '../images/j-7-2.jpg',
               '../images/jordan-ad4-print.jpg',
               '../images/jordan-ad5-print.jpg',
-              '../images/jordan-ad6-print.jpg'];
-
-var pseudopics = ['../images/book-photo-cover.jpg',
+              '../images/jordan-ad6-print.jpg',
+              '../images/book-photo-cover.jpg',
               '../images/book-photo-1.jpg',
               '../images/book-photo-2.jpg',
               '../images/book-photo-3.jpg',
@@ -75,14 +82,9 @@ var pseudopics = ['../images/book-photo-cover.jpg',
               '../images/pseudo-1.jpg',
               '../images/pseudo-2.jpg',
               '../images/pseudo-5.jpg',
-              '../images/pseudo-7.jpg'];
-
-var risingfallingpics = ['../images/rising-falling-photo.jpg',
+              '../images/pseudo-7.jpg',
+              '../images/rising-falling-photo.jpg',
               '../images/rising-falling-phtot2.jpg'];
-
-var images = ['../images/net-presence-1.0.jpg'];
-
-images.push(freestylezpics, bswsgspics, screenshotspics, suggestionspics, alittlebitcoolerpics, pseudopics, risingfallingpics);
 
 ///// Function to preload images //////
 
@@ -108,11 +110,14 @@ function opacityAn(element, amount) {
   $(element).css('opacity', amount);
 }
 
+/////// _L O A D I N G animation
+
 var fading;
 
 function oFlash() {
   var opaElem = document.getElementById('load');
   opaElem.style.opacity = opaElem.style.opacity === "0" ? "1" : "0";
+
 }
 
 function opaChange() {
@@ -120,6 +125,8 @@ function opaChange() {
 }
 
 opaChange();
+
+/////// Fade out the menu
 
 function menuFadeOut() {
   opacityAn('.menu', '0');
@@ -137,6 +144,8 @@ function menuFadeOut() {
   }, 300);
 }
 
+/////// Fade in the menu
+
 function menuFadeIn() {
   opacityAn('.menu', '1');
   $('.menu').css('visibility', 'visible');
@@ -150,16 +159,18 @@ function menuFadeIn() {
   }
 }
 
+////// Fade in dummy menu
+
 function menuFadeDummy () {
   opacityAn('.menu-dummy', '1');
   $('.menu-dummy').css('visibility', 'visible');
 }
 
+//// function to switch menu color
+
 function switchColor() {
   currentColor = color[(index++) % (color.length)];
-  window.console.log(currentColor + 'hello1');
   if (w.width() < 500) {
-    window.console.log(currentColor + 'hello3');
     $('.menu-open').css('background-color', currentColor);
   } else {
     $('.menu-open').css('border-bottom', '2px solid white');
@@ -170,10 +181,14 @@ function switchColor() {
   $('.little-menu a').css({'color':'white', 'border-bottom':'2px solid white'});
 }
 
+//// open menu
+
 function menuOpen() {
   opacityAn('.menu-open', '1');
   $('.menu-open').css('visibility', 'visible');
 }
+
+//// controls colors of buttons on menu
 
 function menuButtonColor() {
   $('.menu-open').removeClass('open');
@@ -188,6 +203,8 @@ function menuButtonColor() {
   opacityAn('.closed', '1');
   opacityAn('.opened', '0');
 }
+
+/////// clears out everything to just menu
 
 function clearOut() {
   $('.view').empty();
@@ -205,11 +222,17 @@ function clearOut() {
     $('.menu-open').css('background-color', 'white');
   }
   $('.diagonal').css('color', 'rgba(255, 86, 86, 0.34)');
-  $('.big-menu a').css('color', '#555');
+  if ($('body').hasClass('medium-l')) {
+    $('.big-menu a').css('color', 'white');
+  } else {
+    $('.big-menu a').css('color', '#555');
+  }
   $('.little-menu a').css({'color':'#FFAEAE', 'border-bottom':'2px solid #FFAEAE'});
   $('.num').css('color', '#c2c2c2');
   $('.comma').css('color', '#555');
 }
+
+////// stuff for menu button hover effect
 
 function strobe(element) {
   currentColor = color[(index++) % (color.length)];
@@ -248,15 +271,6 @@ function strobe10() {
   strobe('a.freestylez');
 }
 
-// function strobe11() {
-//   strobe('a.bk-hm');
-// }
-
-// if (w.width() < 500) {
-//   var flashing;
-//   flashing = setInterval(strobe11, 150);
-// }
-
 function flash(link, color, fn) {
   var flashing;
 
@@ -266,7 +280,7 @@ function flash(link, color, fn) {
 
   $(link).mouseleave(function() {
     clearInterval(flashing);
-    if($('.menu-open').hasClass('open')) {
+    if($('.menu-open').hasClass('open') || $('body').hasClass('medium-l')) {
       $(this).css('color', 'white');
     } else {
       $(this).css('color', color);
@@ -274,6 +288,8 @@ function flash(link, color, fn) {
 
   });
 }
+
+/////// function to fade in each project
 
 function projectFade(project, url) {
   var images = '.' + url + ' img';
@@ -321,31 +337,13 @@ function projectFade(project, url) {
         $('.view .pn').css('transform', 'translateY(49px)');
       } else {
         $('.view .page-info').css('transform', 'translateY(25px)');
-        // $('.view .scroll').css('transform', 'translateY(25px)');
       }
     }, 400);
 
   }, 600);
 }
 
-// function shuffle(array) {
-//   var currentIndex = array.length, temporaryValue, randomIndex;
-//
-//   // While there remain elements to shuffle...
-//   while (0 !== currentIndex) {
-//
-//     // Pick a remaining element...
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//
-//     // And swap it with the current element.
-//     temporaryValue = array[currentIndex];
-//     array[currentIndex] = array[randomIndex];
-//     array[randomIndex] = temporaryValue;
-//   }
-//
-//   return array;
-// }
+////// randomizes order of images
 
 function picOrder() {
   var imgs = document.querySelector('.image-rando');
@@ -360,9 +358,10 @@ function picOrder() {
   for (var i = 0; i < imgs.children.length; i++) {
     var img = imgs.children[i];
     $(img).data('order', i + 1);
-    // window.console.log(img);
   }
 }
+
+///// function to load html files with project pages
 
 function loadContent(url, fn) {
   $('.view').empty();
@@ -375,42 +374,24 @@ function loadContent(url, fn) {
     /// uncheck home link to show they have visited this link
     var hmlink = '.big-menu a.' + url;
     $(hmlink).css('text-decoration', 'none');
-    // window.console.log('texted' + url);
   }, 100);
 }
 
-// function footerClick(project, fn) {
-//   $('.footer a').click(function(event) {
-//     event.preventDefault();
-//     var href = this.href;
-//     var $this = $(this);
-//     if ($this.hasClass('footer-current')) {
-//
-//     } else {
-//       opacityAn(project, '0');
-//       setTimeout(function() {
-//         history.pushState('', 'Mitchell Barton', href);
-//         fn();
-//       }, 300);
-//     }
-//   });
-// }
+////// function for prev/next buttons
 
 function pnClick(project, fn) {
   $('.pn a').click(function(event) {
     event.preventDefault();
     var href = this.href;
-    // var $this = $(this);
     opacityAn(project, '0');
     setTimeout(function() {
       history.pushState('', 'Mitchell Barton', href);
       fn();
     }, 300);
-    // window.console.log('pnd');
   });
 }
 
-// var full = document.getElementsByTagName('fullscreen');
+////// function to go fullscreen when images are clicked
 
 function goFull() {
   var fullIm;
@@ -451,6 +432,8 @@ function goFull() {
   });
 }
 
+///// hover function on images to see title
+
 function titleView() {
   $(document).mousemove(function(e) {
     var xc = e.pageX - 160;
@@ -470,27 +453,33 @@ function titleView() {
   });
 }
 
-function randoStVid() {
-  $('.foundation-myths iframe').each(function() {
-    var rando = Math.random() * 600;
-    rando = Math.floor(rando);
+///// function to start videos at random spots
 
-    var vid = $(this).attr('src');
-  });
-}
+// function randoStVid() {
+//   $('.foundation-myths iframe').each(function() {
+//     var rando = Math.random() * 600;
+//     rando = Math.floor(rando);
+//
+//     var vid = $(this).attr('src');
+//   });
+// }
+
+///// function that combines loading and fading of pages
 
 function gusto(p1, p2, p3) {
   loadContent(p1, function() {
     picOrder();
-    $('.loading').css('z-index', '0');
-    opacityAn('.loading', '0');
     setTimeout(function() {
+      // debugger;
+      $('.loading').css('z-index', '0');
+      if ($('body').hasClass('medium-l')) {
+        $('.inventory').css('letter-spacing', '30px')
+        $('.page-info h2').css('letter-spacing', '36px')
+      }
+      opacityAn('.loading', '0');
       menuFadeOut();
       projectFade(p2, p1);
       menuOpen();
-      setTimeout(function() {
-        opacityAn('.footer', '1');
-      }, 600);
       if (w.width() > 500) {
         goFull();
         titleView();
@@ -501,9 +490,12 @@ function gusto(p1, p2, p3) {
   });
 }
 
+//// function that controls url's and stuff
+
 function switchPage() {
   var currentPg = window.location.href;
-  var site = 'http://mitchellbarton.com';
+  // var site = 'http://mitchellbarton.com';
+  var site = 'http://localhost:8888/mb-v2'
   if (currentPg === (site) || currentPg === (site + '/')) {
 
   } else if (currentPg === (site + '/pseudorandom-landscape')) {
@@ -512,7 +504,7 @@ function switchPage() {
     gusto('rising-falling', '.view .rising-falling', switchPage);
   } else if (currentPg === (site + '/foundation-myths')) {
     gusto('foundation-myths', '.view .foundation-myths', switchPage);
-    randoStVid();
+    // randoStVid();
   } else if (currentPg === (site + '/suggestions')) {
     gusto('suggestions', '.view .suggestions', switchPage);
   } else if (currentPg === (site + '/black-sand-white-sand-grey-sand')) {
@@ -610,18 +602,98 @@ $(document).ready(function() {
   function randoRotate() {
     randoPlace();
     randoSpin();
-    window.console.log('rando rotated');
   }
 
   randoRotate();
   switchPage();
 
+  ////// difficulty levels
+
+  function difft(el1, el2, el3, el4, clss) {
+      $('body').removeClass();
+      $('body').addClass(clss);
+      $(el1).css('display', 'block');
+      $(el2).css('display', 'none');
+      $(el3).css('display', 'none');
+      $(el4).css('display', 'none');
+  }
+
+  ///// easy level
+
+  $('.diff-text .l1').click(function() {
+    $('.diff-text p').removeClass();
+    $(this).addClass('sel');
+    difft('.easy', '.med', '.hard', '.super', 'easy-l');
+
+    $('.menu .big-menu').css({'width':'75%', 'line-height':'normal'});
+    $('.menu .big-menu li').css('margin-right', '30px');
+    $('.menu .big-menu li a').css({'color':'#555', 'visibility':'visible', 'background':'none'});
+
+    $('.menu .little-menu').css({'width':'75%', 'position':'static', 'top':'auto', 'text-align':'initial', 'bottom': 'auto'});
+
+    $('.inventory, .page-info h2').css('letter-spacing', '2.5px');
+  });
+
+  //// medium level
+
+  $('.diff-text .l2').click(function() {
+    $('.diff-text p').removeClass();
+    $(this).addClass('sel');
+    difft('.med', '.easy', '.hard', '.super', 'medium-l');
+
+    $('.menu .big-menu').css({'width':'92%', 'line-height':'130px'});
+    $('.menu .big-menu li').css('margin-right', '130px');
+    $('.menu .big-menu li a').css({'color':'white', 'visibility':'visible'});
+    $('.menu .big-menu li a').css('background', 'wheat');
+
+    $('.menu .little-menu').css({'width':'100%', 'position':'fixed', 'top':'20px', 'text-align':'center', 'bottom': 'auto'});
+
+    $('.inventory').css('letter-spacing', '30px');
+    $('.page-info h2').css('letter-spacing', '36px');
+  });
+
+  ///// hard level
+
+  $('.diff-text .l3').click(function() {
+    $('.diff-text p').removeClass();
+    $(this).addClass('sel');
+    difft('.hard', '.easy', '.med', '.super', 'hard-l');
+
+    $('.menu .big-menu li a').css({'visibility':'hidden', 'background':'none'});
+    $('.menu .big-menu li a .num').css('visibility', 'visible');
+    $('.menu .big-menu').css('line-height', '90px');
+
+    $('.menu .little-menu').css({'width':'auto', 'position':'fixed', 'bottom':'20px', 'right':'20px', 'top':'auto'});
+  });
+
+  /////// super level
+
+  $('.diff-text .l4').click(function() {
+    $('.diff-text p').removeClass();
+    $(this).addClass('sel');
+    difft('.super', '.easy', '.med', '.hard', 'super-l');
+  });
+
+  //// other stuff for levels
+
+  $('.menu .big-menu li a').mouseenter(function() {
+    if ($('body').hasClass('hard-l')) {
+      $(this).css('visibility', 'visible');
+    }
+  });
+
+  $('.menu .big-menu li a').mouseleave(function() {
+    if ($('body').hasClass('hard-l')) {
+      $(this).css('visibility', 'hidden');
+    }
+  });
+
+
+
   $('.diagonal').click(function() {
     event.preventDefault();
     randoRotate();
   });
-
-  // preLoad();
 
   if (w.width() > 800) {
     flash('a.pseudorandom', '#555', strobe3);
