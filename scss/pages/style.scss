@@ -40,8 +40,6 @@ html{
 
 body{
   overflow-x: hidden;
-  // height: 100%;
-  // font-family: "aktiv-grotesk", sans-serif;
   font-family: Arial, sans-serif;
   text-decoration: none;
 
@@ -97,7 +95,7 @@ body{
     left: 15px;
     display: block;
     width: 260px;
-    height: 25px;
+    height: 27px;
     cursor: pointer;
     z-index: 2;
 
@@ -161,13 +159,13 @@ body{
 
       p {
         display: inline;
-        padding-right: 10px;
+        margin-right: 10px;
       }
     }
 
     .sel {
-      color: blue;
-      // text-decoration: underline;
+      color: #FFAEAE;
+      border-bottom: 1px solid #FFAEAE;
     }
   }
 
@@ -234,23 +232,6 @@ body{
     @include xs {
       text-align: left;
     }
-
-    // a {
-    //   opacity: 1;
-    //   color: #c2c2c2;
-    //   text-decoration: none;
-    //   @include transition (opacity .3s);
-    //   &:hover {
-    //     opacity: .5;
-    //     @include transition (opacity .3s);
-    //   }
-
-    //   @include sm {
-    //     &:hover {
-    //       opacity: 1;
-    //     }
-    //   }
-    // }
   }
 
   .bk-hm {
@@ -386,22 +367,12 @@ body{
             left: -20px;
             font-size: 12px;
             color: #c2c2c2;
-            // font-family: "aktiv-grotesk", sans-serif;
             font-family: Arial, sans-serif;
             top: -11px;
             @include xs {
               display: none;
 
             }
-
-            // &:after {
-            //   content: '';
-            //   border-bottom: 4px solid red;
-            //   position: absolute;
-            //   left: 0;
-            //   top: 50%;
-            //   width: 100%;
-            // }
           }
 
           .comma {
@@ -466,10 +437,6 @@ body{
       display: none;
       opacity: 0;
       @include transition (opacity .3s);
-
-      @include xs {
-        // top: 140px;
-      }
 
       .info-text {
         font-size: 13px;
@@ -550,9 +517,6 @@ body{
         letter-spacing: 2.5px;
         right: 50px;
         text-align: right;
-        // border: 1px solid #FFAEAE;
-        // padding: 15px;
-        // @include transition(background-color 1s);
 
         @include xs {
           display: none;
@@ -564,16 +528,6 @@ body{
           display: block;
           margin-bottom: 30px;
         }
-
-        // img {
-        //   opacity: 0;
-        //   width: 200px;
-        //   position: fixed;
-        //   left: 20px;
-        //   z-index: -1;
-        //   top: -38px;
-        //   margin-bottom: 0px;
-        // }
       }
 
       .scroll {
@@ -746,14 +700,6 @@ body{
       }
     }
   }
-
-  // .grad {
-  //   position: fixed;
-  //   width: 100%;
-  //   bottom: 0px;
-  //   height: 50px;
-  //   background: #FFAEAE;
-  // }
 
   .fullscreen {
     // position: absolute;
