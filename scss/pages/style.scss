@@ -712,7 +712,6 @@ body{
     @include align-items(center);
 
     img {
-      height: 90%;
       opacity: 0;
       display: block;
       margin: 0 auto;
@@ -720,6 +719,8 @@ body{
       cursor: -moz-zoom-out;
       @include transition (opacity .3s, transform 2s cubic-bezier(.165,.84,.44,1));
       @include transform (scale(.98));
+      max-height: 90%;
+      max-width: 1100px;
     }
   }
 

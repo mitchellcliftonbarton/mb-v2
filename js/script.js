@@ -18,15 +18,13 @@ var currentColor;
 
 ////// images for preload
 
-var images = ['../images/net-presence-1.0.jpg',
-              '../images/boxes.jpg',
+var images = ['../images/boxes.jpg',
               '../images/chain.jpg',
               '../images/flyer-2.jpg',
               '../images/jersey-1.jpg',
               '../images/sticker.jpg',
               '../images/card.jpg',
               '../images/knuckles-1.jpg',
-              '../images/freestylez.gif',
               '../images/after-a-moment-to-look-forward-to.jpg',
               '../images/billenium.jpg',
               '../images/dino-1.jpg',
@@ -73,6 +71,7 @@ var images = ['../images/net-presence-1.0.jpg',
               '../images/j-3.jpg',
               '../images/j-7.jpg',
               '../images/j-7-2.jpg',
+              '../images/jordan-ad1-print.jpg',
               '../images/jordan-ad4-print.jpg',
               '../images/jordan-ad5-print.jpg',
               '../images/jordan-ad6-print.jpg',
@@ -574,8 +573,8 @@ function gusto(p1, p2, p3) {
 
 function switchPage() {
   var currentPg = window.location.href;
-  var site = 'http://mitchellbarton.com';
-  // var site = 'http://localhost:8888/mb-v2'
+  // var site = 'http://mitchellbarton.com';
+  var site = 'http://localhost:8888/mb-v2'
   if (currentPg === (site) || currentPg === (site + '/')) {
 
   } else if (currentPg === (site + '/pseudorandom-landscape')) {
