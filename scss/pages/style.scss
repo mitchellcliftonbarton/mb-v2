@@ -43,6 +43,10 @@ body{
   font-family: Arial, sans-serif;
   text-decoration: none;
 
+  ::selection {
+    background: #ffaeae;
+  }
+
   .follow {
     opacity: 0;
     font-size: 12px;
@@ -61,31 +65,97 @@ body{
     @include transition (opacity .3s);
     z-index: 3;
     @include xs {
-      display: none;
+      // display: none;
     }
 
     .load-contain {
-      width: 530px;
+      width: 700px;
       margin: 0 auto;
-      background: white;
+      background: #ffbaba;
       padding: 20px;
       position: relative;
       top: 40%;
       @include xs {
-        width: 180px;
+        width: 300px;
         top: 30%;
+      }
+
+      .typing {
+        font-size: 55px;
+        text-align: left;
+        letter-spacing: 14px;
+        color: white;
+        display: inline;
+        text-transform: uppercase;
+
+        @include xs {
+          font-size: 25px;
+          text-align: center;
+          line-height: 50px;
+        }
       }
     }
 
     p {
-      text-align: center;
-      font-size: 50px;
+      // text-align: center;
+      text-align: left;
+      // font-size: 50px;
+      font-size: 20px;
       letter-spacing: 11px;
       color: #FFAEAE;
+      padding-bottom: 20px;
     }
 
     #load {
       opacity: 1;
+    }
+  }
+
+  .typed-cursor{
+    opacity: 1;
+    color: white;
+    font-size: 50px;
+    -webkit-animation: blink 0.9s step-end infinite;
+    -moz-animation: blink 0.9s step-end infinite;
+    animation: blink 0.9s step-end infinite;
+    position: relative;
+    top: -10px;
+    @include xs {
+      font-size: 25px;
+      top: -4px;
+    }
+  }
+
+  @keyframes blink{
+      0% { opacity:1; }
+      50% { opacity:0; }
+      100% { opacity:1; }
+  }
+
+  @-webkit-keyframes blink{
+      0% { opacity:1; }
+      50% { opacity:0; }
+      100% { opacity:1; }
+  }
+
+  @-moz-keyframes blink{
+      0% { opacity:1; }
+      50% { opacity:0; }
+      100% { opacity:1; }
+  }
+
+  .diff-big {
+    position: absolute;
+    bottom: 96px;
+    @include transform(rotate(90deg));
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #c2c2c2;
+    left: -21px;
+    display: none;
+
+    @include xs {
+      display: none;
     }
   }
 
@@ -98,6 +168,10 @@ body{
     height: 27px;
     cursor: pointer;
     z-index: 2;
+
+    @include xs {
+      display: none;
+    }
 
     .easy {
       background: green;
@@ -348,7 +422,6 @@ body{
           font-weight: 500;
           letter-spacing: 2px;
           line-height: 53px;
-          // font-family: "aktiv-grotesk", helvetica;
           font-family: Arial, sans-serif;
           position: relative;
           opacity: 1;
@@ -360,6 +433,36 @@ body{
 
           &:hover {
             text-decoration: none;
+            -webkit-animation: flash 1.2s step-end infinite;
+            animation: flash 1.2s step-end infinite;
+          }
+
+          @-webkit-keyframes flash{
+            0% { color: red; }
+            10% { color: blue; }
+            20% { color: wheat; }
+            30% { color: yellow; }
+            40% { color: pink; }
+            50% { color: purple; }
+            60% { color: green; }
+            70% { color: dodgerblue; }
+            80% { color: orange; }
+            90% { color: rgba(0, 0, 255, 1); }
+            100% { color: rgba(255, 167, 77, 1); }
+          }
+
+          @keyframes flash{
+            0% { color: red; }
+            10% { color: blue; }
+            20% { color: wheat; }
+            30% { color: yellow; }
+            40% { color: pink; }
+            50% { color: purple; }
+            60% { color: green; }
+            70% { color: dodgerblue; }
+            80% { color: orange; }
+            90% { color: rgba(0, 0, 255, 1); }
+            100% { color: rgba(255, 167, 77, 1); }
           }
 
           .num {
@@ -528,6 +631,16 @@ body{
           display: block;
           margin-bottom: 30px;
         }
+
+        img {
+          opacity: 0;
+          @include transition(opacity .3s);
+          position: absolute;
+          z-index: -1;
+          width: 160px;
+          right: 20px;
+          top: -23px;
+        }
       }
 
       .scroll {
@@ -554,6 +667,7 @@ body{
         @include transition(transform 2s cubic-bezier(.165,.84,.44,1));
         @include xs {
           @include transform(translateY(172px));
+          margin-bottom: 200px;
         }
       }
 
@@ -721,6 +835,10 @@ body{
       @include transform (scale(.98));
       max-height: 90%;
       max-width: 1100px;
+    }
+
+    .full-small {
+      max-width: 800px;
     }
   }
 
