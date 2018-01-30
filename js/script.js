@@ -1,3 +1,13 @@
+///// google analytics
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-61480746-1', 'auto');
+ga('send', 'pageview');
+
 ///// random colors
 
 var color = ['rgba(0, 0, 255, 1)',
@@ -16,9 +26,24 @@ var index = 0;
 var w = $(window);
 var currentColor;
 
-////// images for preload
+////// images for preload ///
 
-var images = ['../images/spray-1.jpg',
+var images = ['../images/ankle.jpg',
+              '../images/timestamp-3.jpg',
+              '../images/pulce.jpg',
+              '../images/pink-rock.jpg',
+              '../images/leather-1.jpg',
+              '../images/gold-statue-2.jpg',
+              '../images/fortaleza-4.jpg',
+              '../images/flyer-car.jpg',
+              '../images/dino-8.jpg',
+              '../images/column-3.jpg',
+              '../images/ceiling-1-newer.jpg',
+              '../images/ceiling-2-newer.jpg',
+              '../images/elephant-print-3.jpg',
+              '../images/foam-finger-2.jpg',
+              '../images/mic-1.jpg',
+              '../images/fortaleza.jpg',
               '../images/spray-2.jpg',
               '../images/boxes.jpg',
               '../images/chain.jpg',
@@ -28,6 +53,8 @@ var images = ['../images/spray-1.jpg',
               '../images/card.jpg',
               '../images/knuckles-1.jpg',
               '../images/bar-code.jpg',
+              '../images/shoe-shrink-1.jpg',
+              '../images/card-piles.jpg',
               '../images/after-a-moment-to-look-forward-to.jpg',
               '../images/billenium.jpg',
               '../images/dino-1.jpg',
@@ -142,7 +169,7 @@ function opacityAn(element, amount) {
 
 function opaChange() {
   $('.typing').typed({
-    strings: ["_Almost there...", '_Sorry almost done...', '_Hold on just a second there', '_Getting close!!!!!', '_Just a bit longer...', '_Loading sometimes takes a long time...', '_Just about there...', '_Yay! Its loading!!', '_Going as fast as I can!!', '_Thanks for your loading patience!', '_So close to finishing loading...', '_Loading can sometimes take a while...'],
+    strings: ["_Almost there...", '_Sorry almost done...', '_Hold on just a second there', '_Getting close!!!!!', '_Just a bit longer...', '_Loading sometimes takes a long time...', '_Just about there...', "_Yay! It's loading!!", '_Going as fast as I can!!', '_Thanks for your loading patience!', '_So close to finishing loading...', '_Loading can sometimes take a while...'],
     typeSpeed: 60,
     showCursor: true,
     shuffle: true
@@ -572,6 +599,27 @@ function switchPage() {
         }, 600);
         // footerClick('.view .cv'l switchPage);
         pnClick('.view .cv', switchPage);
+      }, 800);
+
+    });
+  } else if (currentPg === (site + '/design')) {
+    loadContent('design', function() {
+      $('.loading').css('z-index', '0');
+      afterlvl();
+      opacityAn('.loading', '0');
+      menuFadeOut();
+      $('.view .design').css('display', 'block');
+      setTimeout(function() {
+        menuOpen();
+        opacityAn('.view .design', '1');
+        opacityAn('.view .pn', '1');
+        $('.view .design .contain').css('transform', 'translateY(30px)');
+        $('.view .pn').css('transform', 'translateY(49px)');
+        setTimeout(function() {
+          opacityAn('.footer', '1');
+        }, 600);
+        // footerClick('.view .cv'l switchPage);
+        pnClick('.view .design', switchPage);
       }, 800);
 
     });

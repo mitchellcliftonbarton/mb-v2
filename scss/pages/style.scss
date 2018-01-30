@@ -536,7 +536,7 @@ body{
     visibility: visible;
     @include transition (opacity .3s);
 
-    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv, .screenshots, .net-presence, .freestylez, .foundation-myths {
+    .pseudorandom, .rising-falling, .winterprep, .suggestions, .black-sand-white-sand-grey-sand, .a-little-bit-cooler, .cv, .design, .screenshots, .net-presence, .freestylez, .foundation-myths {
       display: none;
       opacity: 0;
       @include transition (opacity .3s);
@@ -671,6 +671,10 @@ body{
         }
       }
 
+      .image-rando {
+        overflow: auto;
+      }
+
       img {
         width: 50%;
         max-width: 800px;
@@ -759,7 +763,7 @@ body{
       }
     }
 
-    .cv {
+    .cv, .design {
       position: relative;
       opacity: 0;
       @include xs {
@@ -813,6 +817,19 @@ body{
         }
       }
     }
+  }
+
+  .design .contain p:first-child {
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+
+  .design .contain a {
+    display: block;
+  }
+
+  .design .contain p a {
+    display: inline-block;
   }
 
   .fullscreen {

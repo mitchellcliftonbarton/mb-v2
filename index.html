@@ -6,12 +6,13 @@
   <title>Mitchell Barton</title>
   <link rel="icon" href="/favicon.png">
   <meta name="description" content="This is Mitchell Barton's website">
+  <meta name="keywords" content="Mitchell Barton, Art, Freestylez, Foundation Myths, A Little Bit Cooler, Rising Falling, Suggestions, Black Sand White Sand Grey Sand">
+  <meta name="author" content="Mitchell Barton">
   <link rel="stylesheet" type="text/css" href="css/application.css">
 </head>
 <body>
     <div class="loading">
       <div class="load-contain">
-        <!-- <p id="load">_ L O A D I N G</p> -->
         <div class="typing"></div>
       </div>
     </div>
@@ -25,10 +26,10 @@
         <div class="s-2"></div>
       </div>
       <div class="diff-text">
-        <p class="l1 sel">EASY</p>
-        <p class="l2">MEDIUM</p>
-        <p class="l3">HARD</p>
-        <p class="l4">SUPER</p>
+        <p onclick="ga('send', 'event', 'easy', 'clicked-easy', 'level');" class="l1 sel">EASY</p>
+        <p onclick="ga('send', 'event', 'medium', 'clicked-med', 'level');" class="l2">MEDIUM</p>
+        <p onclick="ga('send', 'event', 'hard', 'clicked-hard', 'level');" class="l3">HARD</p>
+        <p onclick="ga('send', 'event', 'super', 'clicked-super', 'level');" class="l4">SUPER</p>
       </div>
     </div>
     <div class="menu-open">
@@ -45,11 +46,10 @@
             <li><a class="freestylez" href="/freestylez"><span class="num">01</span>Freestylez<span class="comma">,</span></a></li>
             <li><a class="foundation-myths" href="/foundation-myths"><span class="num">02</span>Foundation Myths<span class="comma">,</span></a></li>
             <li><a class="black-sand-white-sand-grey-sand" href="/black-sand-white-sand-grey-sand"><span class="num">03</span>Black Sand White Sand Grey Sand<span class="comma">,</span></a></li>
-            <li><a class="screenshots" href="/screenshots"><span class="num">04</span>Screenshots<span class="comma">,</span></a></li>
-            <li><a class="suggestions" href="/suggestions"><span class="num">05</span>Suggestions<span class="comma">,</span></a></li>
-            <li><a class="a-little-bit-cooler" href="/a-little-bit-cooler"><span class="num">06</span>A Little Bit Cooler<span class="comma">,</span></a></li>
-            <li><a class="pseudorandom" href="/pseudorandom-landscape"><span class="num">07</span>Pseudorandom Landscape<span class="comma">,</span></a></li>
-            <li><a class="rising-falling" href="/rising-falling"><span class="num">08</span>Rising / Falling<span class="comma">,</span></a></li>
+            <li><a class="suggestions" href="/suggestions"><span class="num">04</span>Suggestions<span class="comma">,</span></a></li>
+            <li><a class="a-little-bit-cooler" href="/a-little-bit-cooler"><span class="num">05</span>A Little Bit Cooler<span class="comma">,</span></a></li>
+            <li><a class="pseudorandom" href="/pseudorandom-landscape"><span class="num">06</span>Pseudorandom Landscape<span class="comma">,</span></a></li>
+            <li><a class="rising-falling" href="/rising-falling"><span class="num">07</span>Rising / Falling<span class="comma">,</span></a></li>
           </ul>
           <ul class="little-menu">
             <li><a href="/cv">CV/CONTACT</a></li>
@@ -64,15 +64,5 @@
     </div>
     <div class="fullscreen"></div>
 </body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-61480746-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 <script type='text/javascript' src='js/min/script-min.js' async></script>
 </html>
